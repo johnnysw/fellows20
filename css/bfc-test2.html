@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .test3{
+      width:800px ;
+      background-color: green;
+    }
+    .test1{
+      width: 100px;
+      height: 400px;
+      background-color: red;
+      float: left;
+    }
+    .test2{
+      width: 200px;
+      height: 200px;
+      background-color: blue;
+      float: left;
+    }
+    .clearfix{
+      content: "";
+      clear: both;
+      display: block;
+    }
+    .test3:after{
+      content: "";
+      clear: both;
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+<div class="test3">
+  <div class="test1"></div>
+  <div class="test2"></div>
+</div>
+
+</body>
+</html>
