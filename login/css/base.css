@@ -61,7 +61,7 @@
 .container .login-input input{
     font-family: arial,"Hiragino Sans GB","Microsoft YaHei",sans-serif;
     font-size: 14px;
-    width: 306px;
+    width: 314px;
     height: 22px;
     padding: 13px 16px 13px 14px;
     display: block;
@@ -101,5 +101,58 @@
 .container .st-right a:hover{
     color: #f56600;
 }
-
+.container .login-type{
+    margin-top:115px;
+}
+.container .login-type fieldset{
+    border:0;
+    border-top: 1px solid #bbb;
+    color: #bbb;
+    font-size: 14px;
+    padding-top: 20px;
+}
+.container .login-icon{
+    text-align: center;
+}
+.container .login-icon a{
+    width: 30px;
+    height: 30px;
+    background-color: #757575;
+    display: inline-block;
+    border-radius: 50%;
+    margin: 0 17px;
+}
+.container .login-icon i{
+    display: block;
+    width: 18px;
+    height: 18px;
+    background-image: url("../images/icons_type.png");
+    margin: 4px auto 0;
+}
+.container .qq:hover{
+    background-color: #0288d1;
+}
+.container .qq i{
+    background-position: -19px 0;
+}
+.container .sina:hover{
+    background-color: #d32f2f;
+}
+.container .sina i{
+    background-position: -38px 0;
+}
+.container .wechat:hover{
+    background-color: #00d20d;
+}
+.container .wechat i{
+    background-position: -84px 0;
+    width: 23px;
+}
+.container .alipay:hover{
+    background-color: #0ae;
+}
+.container .alipay i{
+    background-position: -57px 0;
+    width: 25px;
+}
 /* container css end */
