@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .father{
+      background-color: #dddddd;
+      width: 900px;
+    }
+    .child{
+      width: 200px;
+      height: 200px;
+      float: left;
+    }
+    .aa{
+      background-color: #0000FF;
+    }
+    .bb{
+      background-color: #00ff00;
+    }
+    .cc{
+      background-color: #FF0000;
+    }
+    .dd{
+      background-color: #00aaee;
+
+    }
+    .clearfix:after{
+      content: "";
+      clear: both;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="father clearfix">
+    <div class="child aa"></div>
+    <div class="child bb"></div>
+    <div class="child cc"></div>
+  </div>
+
+</body>
+</html>
