@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  var which=window.confirm("不知道吃啥");
+  if(which){
+      var a = Math.random();
+      a = Math.floor(a*10);
+      switch (a){
+          case 1:
+              dd ="土豆丝";
+              alert("土豆丝");
+              break;
+          case 2:
+              alert("宫保鸡丁");
+              break;
+          case 3:
+              alert("鱼香肉丝");
+              break;
+          case 4:
+              alert("地三鲜");
+              break;
+          default:
+              alert("sss");
+      }
+  }else{
+      alert("知道你还问我！");
+  }
+</script>
+</body>
+</html>

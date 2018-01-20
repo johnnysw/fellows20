@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+    var baby={
+        name:"小红",
+        age:"19",
+        height:"1.68米"
+
+    }
+    var isHave = prompt("有对象没有啊？");
+    if(isHave == "有" || isHave == "没有"){
+        if(isHave == "有"){
+            alert("你说：有啊Ta叫"+baby.name+"今年"+baby.age+"身高"+baby.height);
+            var whichShool = prompt("哪个学校的？");
+            baby.school = whichShool;
+            alert("你说：Ta是"+baby.school+"的！");
+        }else{
+            alert("妈妈说：哦～～");
+        }
+    }else{
+        alert("别打岔，我问你有对象没呢！")
+    }
+
+</script>
+</body>
+</html>

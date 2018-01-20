@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+    var which=window.confirm("不知道吃啥");
+    if(which){
+        var num=prompt("几个人吃啊？");
+        var string1="";
+        if(!isNaN(num)) {
+            string1 = num + "个人吃";
+            var a = Math.random();
+            a = Math.floor(a * 10);
+            console.log(a);
+            switch (a) {
+                case 1:
+                    alert(string1 + "土豆丝");
+                    break;
+                case 2:
+                    alert(string1 + "宫保鸡丁");
+                    break;
+                case 3:
+                    alert(string1 + "鱼香肉丝");
+                    break;
+                case 4:
+                    alert(string1 + "地三鲜");
+                    break;
+                case 5:
+                    alert(string1 + "烧茄子");
+                    break;
+                case 6:
+                    alert(string1 + "米线");
+                    break;
+                case 7:
+                    alert(string1 + "麻辣烫");
+                    break;
+                case 8:
+                    alert(string1 + "盖饭");
+                    break;
+                case 9:
+                    alert(string1 + "炒饭");
+                    break;
+                case 10:
+                    alert(string1 + "面条");
+                    break;
+                default:
+                    alert("要不你还是别吃了吧！")
+            }
+        }else{
+            alert("输入有误！")
+        }
+    }else{
+        alert("知道你还问我！");
+    }
+</script>
+</body>
+</html>

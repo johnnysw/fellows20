@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+    var which=window.confirm("不知道吃啥");
+    if(which){
+        var num=prompt("几个人吃啊？");
+        var personNum=0;
+        var personName=new Array();
+        var isFor = true;
+        console.log(num);
+        if(!isNaN(num) && num) {
+            personNum = num;
+            for(var i=0;i<personNum ;i++){
+              var thisPerson = prompt("第"+(i+1)+"个人叫什么");
+              personName.push(thisPerson);
+              console.log(personName[i]);
+              if(!personName[i]){
+                  isFor = false;
+                  break;
+              }
+            }
+            if(isFor){
+                console.log(personName)
+                for(var j=0;j<personNum ;j++){
+                    var string1 = personName[j]+"吃";
+                    var a = Math.random();
+                    a = Math.floor(a * 10);
+                    switch (a) {
+                        case 1:
+                            alert(string1 + "土豆丝");
+                            break;
+                        case 2:
+                            alert(string1 + "宫保鸡丁");
+                            break;
+                        case 3:
+                            alert(string1 + "鱼香肉丝");
+                            break;
+                        case 4:
+                            alert(string1 + "地三鲜");
+                            break;
+                        case 5:
+                            alert(string1 + "烧茄子");
+                            break;
+                        case 6:
+                            alert(string1 + "米线");
+                            break;
+                        case 7:
+                            alert(string1 + "麻辣烫");
+                            break;
+                        case 8:
+                            alert(string1 + "盖饭");
+                            break;
+                        case 9:
+                            alert(string1 + "炒饭");
+                            break;
+                        case 10:
+                            alert(string1 + "面条");
+                            break;
+                        default:
+                            alert(string1 + "随便")
+                    }
+                }
+            }else{
+                alert("不想吃算了");
+            }
+        }else{
+            alert("是不是不想吃饭了！")
+        }
+    }else{
+        alert("知道你还问我！");
+    }
+</script>
+</body>
+</html>
