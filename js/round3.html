@@ -12,20 +12,17 @@
         var personNum=0;
         var personName=new Array();
         var isFor = true;
-        console.log(num);
         if(!isNaN(num) && num) {
             personNum = num;
             for(var i=0;i<personNum ;i++){
               var thisPerson = prompt("第"+(i+1)+"个人叫什么");
               personName.push(thisPerson);
-              console.log(personName[i]);
               if(!personName[i]){
                   isFor = false;
                   break;
               }
             }
             if(isFor){
-                console.log(personName)
                 for(var j=0;j<personNum ;j++){
                     var string1 = personName[j]+"吃";
                     var a = Math.random();
