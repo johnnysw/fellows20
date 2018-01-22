@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  function area() {
+      //一段计算三角形面积的代码
+      var wide=window.prompt("请输入三角形的底边长度！","");
+      var high=window.prompt("请输入三角形的高！","");
+      var area=wide*high/2;
+      if (!isNaN(area)) {//判断用户是否输入的是数字
+          alert("三角形的面积为"+area);
+      } else {
+          alert("您的输入有误!");
+      }
+  }
+    area();
+</script>
+</body>
+</html>

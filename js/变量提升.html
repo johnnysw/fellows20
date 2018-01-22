@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+//    变量提升实例
+//    var v='Hello World';
+//    function fun(){
+//        console.log(v);
+//    }
+//    fun();
+
+//    变量提升实例
+//    var v='Hello World';
+//    function fun(){
+//        console.log(v);
+//        var v = "hi!";
+//    }
+//    fun();
+
+//    函数提升实例
+/**
+ * 正确的方式：先声明函数，再调用函数 (最佳实践)
+ */
+//function catName(name) {
+//    console.log("My cat's name is " + name);
+//}
+//
+//catName("Tigger");
+
+//    函数提升实例
+/**
+ * 不推荐的方式：先调用函数，再声明函数
+ */
+
+//catName("Tigger");
+//
+//function catName(name) {
+//    console.log("My cat's name is " + name);
+//}
+
+
+//    变量函数提升实例
+//    console.log("1="+a);
+//    var a = 1;
+//    function a() {
+//        console.log("2="+a)
+//    }
+//    a = 2;
+//    a();
+//    console.log(a);
+
+</script>
+</body>
+</html>

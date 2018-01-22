@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+  <title>ajax</title>
+  <style type="text/css">
+  </style>
+
+</head>
+<body>
+<button id="button1">Button1</button>
+<button id="button2">Button2</button>
+<button id="button3">Button3</button>
+<script type="text/javascript">
+    (function(){
+        for(var i=1;i<4;i++){
+            (function (n) {
+                var b=document.getElementById("button"+n);
+                b.addEventListener("click",function(){ alert("Button"+n);},false);
+            })(i)
+        }
+    })();
+</script>
+</body>
+</html>

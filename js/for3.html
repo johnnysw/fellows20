@@ -6,19 +6,36 @@
 </head>
 <body>
 <script>
-  var str = prompt("请输入字符串");
-  var arr = str.split(",");
-  var arr2 ="";
-  for(var i=0;i<arr.length;i++){
-      for(var j=i+1; j<arr.length;j++){
-        if(arr[i]>arr[j]){
-            arr2=arr[i];
-            arr[i] = arr[j];
-            arr[j] = arr2;
-        }
+  function byup() {
+      var arr = str.split(",");
+      var arr2 ="";
+      for(var i=0;i<arr.length;i++){
+          for(var j=i+1; j<arr.length;j++){
+              if(arr[i]>arr[j]){
+                  arr2=arr[i];
+                  arr[i] = arr[j];
+                  arr[j] = arr2;
+              }
+          }
       }
+      console.log(arr);
   }
-  console.log(arr);
+  function bydown(){
+      var arr = str.split(",");
+      var arr2 ="";
+      for(var i=0;i<arr.length;i++){
+          for(var j=i+1; j<arr.length;j++){
+              if(arr[i]>arr[j]){
+                  arr2=arr[i];
+                  arr[i] = arr[j];
+                  arr[j] = arr2;
+              }
+          }
+      }
+      console.log(arr);
+  }
+  var str = prompt("请输入字符串");
+
 </script>
 </body>
 </html>

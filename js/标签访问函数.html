@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    p{
+      color: #00aaee;
+    }
+    .over {
+      color:red;
+      background:blue;
+      font-size:larger;
+    }
+    .out {
+      color:black;
+      background:white;
+      font-size:smaller;
+    }
+    .click {
+      color:yellow;
+      background:yellow;
+      font-size:12px;
+    }
+
+  </style>
+</head>
+<body>
+<p id="p1">一大行文字,它们都是普通的文字!</p>
+<a href="javascript:window.prompt('输入内容将替换当前页面!','');undefined">A</a>
+<script>
+    window.onload = initAll;
+    function initAll() {
+        var p = document.getElementById("p1");
+        p.onclick=clickFn;//这里的事件注册方式除了比行内注册方式少了括号,其它的是一样的
+        p.onmouseover = overFn;
+        p.onmouseout = outFn;
+    }
+    function clickFn() {
+        this.className="click";//这里,this也是可用的
+        //注意是className,而不是class
+    }
+    function overFn() {
+        this.className="over";
+    }
+    function outFn() {
+        this.className="out";
+    }
+</script>
+</body>
+</html>
