@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+    var win_rate=0;		//赢率
+    var play_times=0;	//总次数
+    var wins=0;			//赢的次数
+    var last_digits;	//上次数字串
+    var last_win;	//上次是否赢?
+    function PlayOnce()
+    {//模拟玩一次数字机游戏
+        var i,digit;
+        play_times++;
+        last_digits="";
+        last_win=false;
+        for(i=0;i<3;i++)
+        {
+            digit = Math.floor(Math.random()*9)+1;
+            last_digits += digit;
+            if (digit==8) last_win=true;
+        }
+        if (last_win) wins++;
+        win_rate = Math.floor(100*(wins/play_times));
+    }
+
+    for(var i =0;i<10;i++){
+          PlayOnce();
+          document.write(last_digits+"<br>");
+          document.write(last_win?"赢":"输"+"<br>");
+          document.write("胜率："+win_rate+"<br>");
+          document.write("<br><br>");
+    }
+</script>
+</body>
+</html>

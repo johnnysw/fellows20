@@ -6,22 +6,31 @@
 </head>
 <body>
 <script>
-    var nb=0,n,x,A,B,C;
-    for(n=1000;n<=9999;n++){
-        x = n;
-        A = Math.floor(x/1000);
-        x %= 1000;
-        B = Math.floor(x/100);
-        x %= 100;
-        C = Math.floor(x/10);
-        if (n%13 == 0 && A == B+C){
-            nb += 1;
-            document.write(n + "   ");
-            if (nb%10 == 0) document.write("\n");
-        }
-    }
-    document.write("\n\n");
-    document.write("共有" + nb + "个满足条件的数");
+//    var nb=0,n,x,A,B,C;
+//    for(n=1000;n<=9999;n++){
+//        x = n;
+//        A = Math.floor(x/1000);
+//        x %= 1000;
+//        B = Math.floor(x/100);
+//        x %= 100;
+//        C = Math.floor(x/10);
+//        if (n%13 == 0 && A == B+C){
+//            nb += 1;
+//            document.write(n + "   ");
+//            if (nb%10 == 0) document.write("\n");
+//        }
+//    }
+//    document.write("\n\n");
+//    document.write("共有" + nb + "个满足条件的数");
+  var no2=0,no3=0,no4=0;
+  for(var i = 1000;i<10000;i++){
+      no4 = Math.floor(i/1000);
+      no3 = Math.floor(i/100)%10;
+      no2 = Math.floor(i/10)%10;
+      if(no3+no2 == no4 && i%13==0){
+        console.log(i);
+      }
+  }
 </script>
 </body>
 </html>

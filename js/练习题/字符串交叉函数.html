@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+    function Merge(str1,str2)
+    {//交叉合并两个字符串
+        var s1 = str1,s2=str2,result="",max_len,i
+        max_len = Math.max(s1.length,s2.length)
+        for(i=0;i<max_len;i++)
+        {
+            result += s1.charAt(i);
+            result += s2.charAt(i);
+        }
+        return result;
+    }
+
+    var s1,s2;
+    s1 = prompt("请输入第一个字符串:","");
+    s2 = prompt("请输入第二个字符串:","");
+    alert("合并后的字符串:\n"+Merge(s1,s2));
+</script>
+</body>
+</html>

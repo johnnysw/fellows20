@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .test{
+      height: 3000px;
+      width: 200px;
+      background-color: red;
+    }
+    button{
+      position: fixed;
+      top: 0;
+      right: 0;
+    }
+  </style>
+</head>
+<body>
+<div class="test"></div>
+<button onclick="goBack()">返回</button>
+<script>
+    //window.open("http://www.bai.com");
+   //function goTop() {
+       //window.scrollTo(0,100);
+    //   window.open("http://www.bai.com");
+   //}
+function goBack() {
+    window.history.go();
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  //被4除余2，被7除余3，被9除余5
+  var k =0;
+  function aa(n) {
+      if( n%3==0 && n%5==0 && n%7==0 ){
+          k++;
+          document.write(n+"  ");
+          if(k%6==0){
+              document.write("<br>");
+          }
+      }
+  }
+
+  for (var i=1;i<1000;i++){
+      aa(i);
+  }
+
+
+</script>
+</body>
+</html>

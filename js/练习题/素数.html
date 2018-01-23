@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  var isSS=true;
+  var sumNum=0;
+  for(var i = 100;i<1000;i++){
+      for(var j=2;j<i;j++){
+          if(i%j==0){
+            isSS = false;
+            break;
+          }
+      }
+      if(isSS){
+          document.write(i+",");
+          ++sumNum;
+          if(sumNum%6==0){
+              document.write("<br>");
+          }
+      }
+      isSS = true;
+  };
+
+
+</script>
+</body>
+</html>

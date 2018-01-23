@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+    function IsLeapYear(y)
+    {//判断是否闰年
+        return (y%4==0 && y%100!=0)||(y%400==0);
+    }
+
+    function DayOfYear(d)
+    {//求某日期d在所有年份的第几天
+        var months=new Array["31","28","31","30","31","30","31","31","30","31","30","31"],days,i;
+        if(IsLeapYear(d.getFullYear())){
+            months[2]=29;
+        }
+        days=0;
+        for(i=d.getMonth()-1;i>=0;i--){
+            days += months[i];
+        }
+        days += d.getDate();
+        return days;
+    }
+
+    var today=new Date();
+    alert("今天("+today.toLocaleDateString()+")是本年度的第"+DayOfYear(today)+"天");
+
+</script>
+</body>
+</html>

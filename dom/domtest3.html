@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .aa{
+      color: red;
+      background-color: #00aaee;
+    }
+    .active{
+      background-color: #00aaee;
+    }
+  </style>
+</head>
+<body>
+
+<div id="testdiv" class="classN">点击1</div>
+<div clss="ddd" onclick="">点击2</div>
+<ul>
+  <li class="">1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+  <li>5</li>
+  <li>6</li>
+</ul>
+<script>
+//  var arry=["1","2","3"];
+//  console.log(arry);
+//  var a = document.getElementById("testdiv");
+//  a.onmouseover = function () {
+//      a.className = "aa";
+//  }
+//  a.onclick = function () {
+//      a.style.color="red";
+//  }
+//  var a = document.getElementsByTagName("li");
+//    for (var i=0;i<a.length;i++){
+//          a[i].onmouseover = function () {
+//              for(var j=0;j<a.length;j++){
+//                  a[j].className="";
+//              }
+//              this.className = "active";
+//          }
+//        a[i].onmouseover = function () {
+//            this.className = "active"
+//        }
+//        a[i].onmouseout = function () {
+//            this.className = "";
+//        }
+     //}
+
+var a = document.getElementsByTagName("li");
+
+for(var i=0 ;i<a.length;i++){
+    a[i].onmouseover = function () {
+        for(var j=0;j<a.length;j++){
+            a[j].className="";
+        }
+        this.className="aa";
+       // a[i].className = "aa";
+    }
+}
+
+//    a[0].onmouseover = function () {
+//        a[0].className = "active";
+//    }
+//    a[0].onmouseout =function () {
+//        a[0].className = "";
+//    }
+//    a[1].onmouseover = function () {
+//        a[1].className = "active";
+//    }
+   
+
+  //var b = document.getElementsByTagName("div")[1];
+  //var c = document.getElementsByTagName("ul");
+  //var d = c[0].firstChild;
+//  b.previousSibling;
+//  console.log(b);
+
+  //console.log(b);
+//  b[0].onclick = function () {
+//      console.log("1");
+//  }
+//  console.log(a);
+//  function testfun () {
+//      console.log("1");
+//  }
+</script>
+</body>
+</html>

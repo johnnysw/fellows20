@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+    var explorer =navigator.userAgent ;
+    //ie
+    if (explorer.indexOf("MSIE") >= 0) {
+        alert("ie");
+    }
+//firefox
+    else if (explorer.indexOf("Firefox") >= 0) {
+        alert("Firefox");
+    }
+//Chrome
+    else if(explorer.indexOf("Chrome") >= 0){
+        alert("Chrome");
+    }
+//Opera
+    else if(explorer.indexOf("Opera") >= 0){
+        alert("Opera");
+    }
+//Safari
+    else if(explorer.indexOf("Safari") >= 0){
+        alert("Safari");
+    }
+//Netscape
+    else if(explorer.indexOf("Netscape")>= 0) {
+        alert('Netscape');
+    }
+</script>
+</body>
+</html>
