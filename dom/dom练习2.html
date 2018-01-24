@@ -12,23 +12,26 @@
 
 </head>
 <body>
-<p><input type="text" value="北京市"></p>
-<p><input type="text" value="朝阳区"></p>
-<p><button id="btn">传参</button></p>
+<p><input type="text" placeholder="请输入网址"></p>
+<p><button id="btn">跳转</button></p>
 
 <script>
-    var myFn = function(a, b)
-    {
-        alert(a.value);
-        alert(b.value)
-    };
+    var aInput = document.getElementsByTagName("input");
+    var oButton = document.getElementById("btn");
 
-    var oInput = document.getElementsByTagName("input");
-    var oBtn = document.getElementById("btn");
-    oBtn.onclick = function()
-    {
-        myFn(oInput[0],oInput[1])
+    oButton.onclick = function () {
+        var thisVal = aInput[0].value;
+        location.href="http://"+thisVal;
     }
+    aInput[0].onkeydown =function (e) {
+        var thisVal = aInput[0].value;
+        var keyCod = e.keyCode;
+        if(keyCod == 13){
+            location.href="http://"+thisVal;
+        }
+    }
+
+
 </script>
 </body>
 </html>

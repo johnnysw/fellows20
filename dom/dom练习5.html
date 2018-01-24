@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .clearfix:after{
+      content: "";
+      display: block;
+      clear: both;
+    }
+    .content{
+      width: 405px;
+      margin:30px auto;
+    }
+    ul{
+      list-style-type: none;
+    }
+    .big-img{
+      border:1px solid #ddd;
+      width:403px;
+      text-align: center;
+    }
+    .big-img img{
+      width: 300px;
+      height: 200px;
+    }
+    ul li:first-child{
+      border-left: 1px solid #ddd;
+    }
+    ul li{
+      float: left;
+      border:0;
+      border-right:1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      width: 100px;
+    }
+    ul li:hover{
+      cursor: pointer;
+    }
+    ul img{
+      width: 99px;
+      height: 100px;
+    }
+
+  </style>
+</head>
+<body>
+<div class="content">
+  <div class="big-img"><img src="image/slider1.jpg" alt="" id="big-img"></div>
+  <ul class="clearfix">
+    <li><img src="image/slider1.jpg" alt=""></li>
+    <li><img src="image/slider2.jpg" alt=""></li>
+    <li><img src="image/slider3.jpg" alt=""></li>
+    <li><img src="image/slider4.jpg" alt=""></li>
+  </ul>
+</div>
+<script>
+  var aLi = document.getElementsByTagName("img");
+  var oImg = document.getElementById("big-img");
+
+  for(var i = 0;i<aLi.length;i++){
+      aLi[i].onmouseover = function () {
+          var thisSrc = this.getAttribute("src");
+          oImg.setAttribute("src",thisSrc);
+
+      }
+  }
+
+
+
+
+
+
+
+//  for(var i=0;i<aLi.length;i++){
+//      aLi[i].onmouseover = function () {
+//          var thisSrc = this.firstChild.getAttribute("src");
+//          oImg.setAttribute("src",thisSrc);
+//      }
+//  }
+</script>
+</body>
+</html>

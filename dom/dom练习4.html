@@ -9,7 +9,7 @@
     #outer{width:450px;margin:10px auto;}
     #tab{overflow:hidden;zoom:1;background:#000;border:1px solid #000;}
     #tab li{float:left;color:#fff;height:30px;cursor:pointer;line-height:30px;list-style-type:none;padding:0 20px;}
-    #tab li.current{color:#000;background:#ccc;}
+    #tab li.active{color:#000;background:#ccc;}
     #content{border:1px solid #000;border-top-width:0;}
     #content ul{line-height:25px;display:none;margin:0 30px;padding:10px 0;}
   </style>
@@ -18,18 +18,21 @@
 <body>
 <div id="outer">
   <ul id="tab">
-    <li class="current">第一课</li>
+    <li class="active">第一课</li>
     <li class="">第二课</li>
     <li class="">第三课</li>
   </ul>
   <div id="content">
-    <ul style="display: block;">
+    <ul style="display: block">
+      <li>网页特效原理分析</li>
+      <li>网页特效原理分析</li>
+      <li>网页特效原理分析</li>
       <li>网页特效原理分析</li>
     </ul>
-    <ul style="display: none;">
+    <ul>
       <li>改变网页背景颜色</li>
     </ul>
-    <ul style="display: none;">
+    <ul>
       <li>JavaScript组成：ECMAScript、DOM、BOM，JavaScript兼容性来源</li>
     </ul>
   </div>
@@ -45,7 +48,7 @@
         oLi[i].onmouseover = function ()
         {
             for(var n = 0; n < oLi.length; n++) oLi[n].className="";
-            this.className = "current";
+            this.className = "active";
             for(var n = 0; n < oUl.length; n++) oUl[n].style.display = "none";
             oUl[this.index].style.display = "block"
         }

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .active{
+      color: red;
+    }
+    div{
+      width: 300px;
+      margin: 0 auto;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<div>
+  <p class="aa">文本1</p>
+  <p>文本2</p>
+  <p>文本3</p>
+  <p>文本4</p>
+</div>
+<script>
+  var aP = document.getElementsByTagName("p");
+  for(var i=0;i<aP.length;i++){
+      aP[i].onclick = function () {
+          for(var j=0;j<aP.length;j++){
+              aP[j].classList.remove("active");
+          }
+          this.classList.add("active");
+      }
+  }
+</script>
+</body>
+</html>

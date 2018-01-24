@@ -4,11 +4,19 @@
   <meta charset="UTF-8">
   <title>控制div属性</title>
   <style>
-    .testa{
-      background-color: #00aaee !important;
+    #outer{
+      width:500px;
+      margin:0 auto;
+      padding:0;
+      text-align:center;
     }
-    #outer{width:500px;margin:0 auto;padding:0;text-align:center;}
-    #div1{width:100px;height:100px;background:black;margin:10px auto;display:block;}
+    #div1{
+      width:100px;
+      height:100px;
+      background:black;
+      margin:10px auto;
+      display:block;
+    }
   </style>
 
 </head>
@@ -19,56 +27,32 @@
   <input type="button" value="变色">
   <input type="button" value="隐藏">
   <input type="button" value="重置">
-  <input type="button" value="添加样式">
-  <input type="button" value="取消样式">
   <div id="div1" style="display: block;"></div>
 </div>
 
   <script>
-//      var changeStyle = function (elem, attr, value)
-//      {
-//          elem.style[attr] = value
-//      };
-//      window.onload = function ()
-//      {
-//          var oBtn = document.getElementsByTagName("input");
-//          var oDiv = document.getElementById("div1");
-//          var oAtt = ["width","height","background","display","display"];
-//          var oVal = ["200px","200px","red","none","block"];
-//
-//          for (var i = 0; i < oBtn.length; i++)
-//          {
-//              oBtn[i].index = i;
-//              oBtn[i].onclick = function ()
-//              {
-//                  this.index == oBtn.length - 1 && (oDiv.style.cssText = "");
-//                  changeStyle(oDiv, oAtt[this.index], oVal[this.index])
-//              }
-//          }
-//      };
-          var aBtn = document.getElementsByTagName("input");
-          var oDiv = document.getElementById("div1");
-              oBtn[0].onclick = function () {
-              oDiv.style.width = "200px";
+      var oBtn = document.getElementsByTagName("input");
+      var oDiv = document.getElementById("div1");
+      var oAtt = ["width","height","background","display","display"];
+      var oVal = ["200px","200px","red","none","block"];
+
+      for (var i = 0; i < oBtn.length; i++)
+      {
+          oBtn[i].index = i;
+          oBtn[i].onclick = function ()
+          {
+              var thisStyle = oAtt[this.index];
+              var styleVal = oVal[this.index];
+              this.index==4? oDiv.style.cssText = "" : oDiv.style[thisStyle] = styleVal;
+
           }
-              oBtn[1].onclick = function () {
-              oDiv.style.height = "400px";
-          }
-              oBtn[2].onclick = function () {
-              oDiv.style.backgroundColor = "red";
-          }
-              oBtn[3].onclick = function () {
-              oDiv.style.display = "none";
-          }
-              oBtn[4].onclick = function () {
-              oDiv.style.cssText = "";
-          }
-              oBtn[5].onclick = function () {
-              oDiv.className = "testa";//oDiv.classList.add("testa"); 可以这样写
-          }
-              oBtn[6].onclick = function () {
-              oDiv.classList.remove("testa");
-          }
+      }
+
+
+
+
+
+
   </script>
 </body>
 </html>

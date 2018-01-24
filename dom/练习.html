@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>控制div属性</title>
+  <style>
+    #outer{
+      width:500px;
+      margin:0 auto;
+      padding:0;
+      text-align:center;
+    }
+    #div1{
+      width:100px;
+      height:100px;
+      background:black;
+      margin:10px auto;
+      display:block;
+    }
+  </style>
+
+</head>
+<body>
+<div id="outer">
+  <input type="button" value="变宽" class="aa">
+  <input type="button" value="变高" class="bb">
+  <input type="button" value="变色" class="cc">
+  <input type="button" value="隐藏" class="dd">
+  <input type="button" value="重置" class="ee">
+  <div id="div1" style="display: block;"></div>
+</div>
+
+<script>
+  var aBtn = document.getElementsByTagName("input");
+  var oDiv = document.getElementById("div1");
+  var arr1 = ["width","height","background-color","display"];
+  var arr2 = ["300px","300px","#dddddd","none"];
+
+  for(var i=0;i<aBtn.length;i++){
+      aBtn[i].index=i;
+      aBtn[i].onclick =function () {
+          for(var j=0;j<aBtn.length;j++){
+              aBtn[j].classList.remove("active");
+          }
+          this.classList.add("active")
+      }
+  }
+
+
+
+
+
+</script>
+</body>
+</html>
