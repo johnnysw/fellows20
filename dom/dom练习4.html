@@ -18,8 +18,8 @@
 <body>
 <div id="outer">
   <ul id="tab">
-    <li class="active">第一课</li>
-    <li class="">第二课</li>
+    <li class="">第一课</li>
+    <li class="active">第二课</li>
     <li class="">第三课</li>
   </ul>
   <div id="content">
@@ -28,31 +28,40 @@
       <li>网页特效原理分析</li>
       <li>网页特效原理分析</li>
       <li>网页特效原理分析</li>
+      <li>第一页</li>
     </ul>
     <ul>
+      <li>第二页</li>
       <li>改变网页背景颜色</li>
     </ul>
     <ul>
+      <li>第三页</li>
       <li>JavaScript组成：ECMAScript、DOM、BOM，JavaScript兼容性来源</li>
     </ul>
   </div>
 </div>
 
 <script>
-    var oLi = document.getElementById("tab").getElementsByTagName("li");
-    var oUl = document.getElementById("content").getElementsByTagName("ul");
+//    var oLi = document.getElementById("tab").getElementsByTagName("li");
+//    var oUl = document.getElementById("content").getElementsByTagName("ul");
+      var oTab = document.getElementById("tab");
+      var aTabLi = oTab.getElementsByTagName("li");
+      var aUl = document.getElementById("content").getElementsByTagName("ul");
 
-    for(var i = 0; i < oLi.length; i++)
-    {
-        oLi[i].index = i;
-        oLi[i].onmouseover = function ()
-        {
-            for(var n = 0; n < oLi.length; n++) oLi[n].className="";
-            this.className = "active";
-            for(var n = 0; n < oUl.length; n++) oUl[n].style.display = "none";
-            oUl[this.index].style.display = "block"
-        }
-    }
+      for(var i = 0;i<aTabLi.length;i++){
+          aTabLi[i].index = i;
+          aTabLi[i].onmouseover = function () {
+              for(var j=0;j<aTabLi.length;j++){
+                  aTabLi[j].className ="";
+                  aUl[j].style.display="none";
+              }
+              aUl[this.index].style.display="block";
+              this.className="active";
+          }
+      }
+
+
+
 </script>
 </body>
 </html>
