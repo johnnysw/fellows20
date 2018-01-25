@@ -41,29 +41,33 @@
   </ul>
 </div>
 <script type="text/javascript">
+  var oBox = document.getElementById("box");
   var aImg = document.getElementById("img-list").getElementsByTagName("li");
   var aNum = document.getElementById("num-bar").getElementsByTagName("li");
   var aBtn = document.getElementById("left-btn").getElementsByTagName("li");
-  var globalIndex = 0
+  var globalIndex = 0;
+  var isInterval = true;
+
+  setInterval(function () {
+      if(isInterval){
+          changeImg(globalIndex+1);
+      }
+  },1000);
+  
+  oBox.onmouseover = function () {
+      isInterval =false;
+  }
+  oBox.onmouseout = function () {
+      isInterval =true;
+  }
 
   for(var k=0;k<aBtn.length;k++){
       aBtn[k].onclick = function () {
-
           var thisBtn= this.getAttribute("this-type");
-          console.log(thisBtn)
           if(thisBtn == "next"){
-              if(globalIndex+1<=4){
-                  changeImg(globalIndex+1);
-              }else{
-                  changeImg(0);
-              }
-
+              changeImg(globalIndex+1);
           }else{
-              if(globalIndex>0){
-                  changeImg(globalIndex-1);
-              }else{
-                  changeImg(4);
-              }
+              changeImg(globalIndex-1);
           }
       }
   }
@@ -75,6 +79,11 @@
       }
   }
   function changeImg(index) {
+      if(index == 5){
+          index =0;
+      }else if(index == -1){
+          index =4;
+      }
       for(var j=0;j<aNum.length;j++){
           aNum[j].className="";
           aImg[j].style.opacity =0;
@@ -83,7 +92,6 @@
       aImg[index].style.opacity = 1;
       globalIndex = index;
       console.log(globalIndex);
-
   }
 
 </script>
