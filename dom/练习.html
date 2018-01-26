@@ -2,52 +2,63 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>控制div属性</title>
-  <style>
-    #outer{
-      width:500px;
-      margin:0 auto;
-      padding:0;
-      text-align:center;
-    }
-    #div1{
-      width:100px;
-      height:100px;
-      background:black;
-      margin:10px auto;
-      display:block;
-    }
-  </style>
-
+  <title>练习</title>
 </head>
 <body>
-<div id="outer">
-  <input type="button" value="变宽" class="aa">
-  <input type="button" value="变高" class="bb">
-  <input type="button" value="变色" class="cc">
-  <input type="button" value="隐藏" class="dd">
-  <input type="button" value="重置" class="ee">
-  <div id="div1" style="display: block;"></div>
-</div>
-
+  <button id="a"></button>
+  <span class="b">第一个span</span>
+  <span class="b">第二个span</span>
 <script>
-  var aBtn = document.getElementsByTagName("input");
-  var oDiv = document.getElementById("div1");
-  var arr1 = ["width","height","background-color","display"];
-  var arr2 = ["300px","300px","#dddddd","none"];
+ document.getElementById("a");
+ var aSpan = document.getElementsByClassName("b");
+ var aSpan2 = document.getElementsByTagName("span");
 
-  for(var i=0;i<aBtn.length;i++){
-      aBtn[i].index=i;
-      aBtn[i].onclick =function () {
-          for(var j=0;j<aBtn.length;j++){
-              aBtn[j].classList.remove("active");
-          }
-          this.classList.add("active")
+  for(var i= 0;i<aSpan.length;i++) {
+      aSpan[i].index = i;
+      aSpan[i].onclick = function () {
+          //console.log(this.index);
+
+          setInterval(function () {
+              var i = 0;
+              console.log(aSpan[i++].index);
+          },1000);
+
       }
   }
 
+      //var a = document.getElementsByTagName("span");
+      //console.log(aSpan[1].index);
 
 
+//  var person = {
+//      name:"xiaoming",
+//      age:"19"
+//  }
+//  person.school = "黑大";
+//  console.log(person);
+//      var i = 0;
+//      var timer = setInterval(function () {
+//          console.log(++i)
+//          if(i == 5){
+//              clearInterval(timer);
+//          }
+//      }, 1000);
+
+var person = {
+    aaaa:"xiaohong",
+    age:"12",
+    fun:function () {
+        console.log(this.aaaa);
+    }
+}
+
+//person.fun();
+
+ aSpan[0].aaaa=1;
+ aSpan[0].onclick = function () {
+     console.log(this.aaaa);
+     person.fun();
+ }
 
 
 </script>
