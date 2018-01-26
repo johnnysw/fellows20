@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>倒计时</title>
+  <style>
+    #time-bar{
+      width: 200px;
+      background-color: #dddddd;
+      margin:0 auto;
+      text-align: center;
+      padding-bottom: 30px;
+    }
+    button{
+      padding:5px 30px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="time-bar">
+  <h1 id="time-area">100</h1>
+  <button id="btn">开始</button>
+</div>
+<script>
+  var oTimer = document.getElementById("time-area")
+  var oBtn = document.getElementById("btn");
+  var num = 100;
+  var key = 1;
+  var timer
+
+  function changeNum() {
+      oTimer.innerText = num;
+      num--;
+  }
+
+  oBtn.onclick = function () {
+      if(key == 1){
+          timer = setInterval("changeNum()",1000);
+          this.innerText = "暂停";
+      }else{
+          clearInterval(timer);
+          this.innerText = "开始"
+      }
+      key *=-1;
+  }
+
+</script>
+</body>
+</html>

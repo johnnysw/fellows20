@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>当前输入框高亮显示</title>
+  <style>
+    body,form,h2,p,input{margin:0;padding:0;}
+    body{color:#4f4f4f;font:14px/1.5 \5fae\8f6f\96c5\9ed1;}
+    form{width:400px;background:#fef4eb;border:2px solid #f60;padding-bottom:10px;overflow:hidden;zoom:1;margin:10px auto;}
+    form h2{color:#fe791e;font-size:16px;background:#ffebd7;border-bottom:2px solid #f60;padding:5px 10px;}
+    form p{float:left;clear:both;width:100%;height:31px;margin-top:10px;line-height:31px;}
+    form label,form input{float:left;}
+    form label{width:100px;height:31px;text-align:right;}
+    form .f-btn{color:#fff;width:104px;height:31px;cursor:pointer;font-size:16px;background:#f60;line-height:31px;border-radius:5px;}
+    form input{border:1px solid #dddddd;height: 30px;border-radius: 5px;}
+    form .active{background-color: #fef4eb}
+  </style>
+
+</head>
+<body>
+<form>
+  <h2>用户登录</h2>
+  <p><label>用户名：</label><input class="" type="text"></p>
+  <p><label>密码：</label><input class="" type="password"></p>
+  <p><label></label><input class="f-btn" type="button" value="登 录"></p>
+</form>
+
+<script type="text/javascript">
+    var aInput = document.getElementsByTagName("input");
+    for (var i = 0; i < aInput.length - 1; i++)
+    {
+        aInput[i].onfocus = function ()
+        {
+            this.className = "active"
+        };
+        aInput[i].onblur = function ()
+        {
+            this.className = ""
+        }
+    }
+</script>
+</body>
+</html>
