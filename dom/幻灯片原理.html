@@ -26,6 +26,7 @@
     <li><img src="image/03.jpg" width="490" height="170"></li>
     <li><img src="image/04.jpg" width="490" height="170"></li>
     <li><img src="image/05.jpg" width="490" height="170"></li>
+    <li><img src="image/01.jpg" width="490" height="170"></li>
   </ul>
   <ul class="count">
     <li class="active">1</li>
@@ -41,89 +42,189 @@
 </div>
 <script type="text/javascript">
   var oBox = document.getElementById("box");
-  var aUl = document.getElementsByTagName("ul");
-  var aNum = aUl[1].getElementsByTagName("li");
-  var aBtn = aUl[2].getElementsByTagName("li");
-  var oList = document.getElementById("silder-list")
-  var globalIndex=0;
-  var dirction = -10;
-  var timer;
-  var isChange = true;
-  var isChange2 = true;
-  oList.innerHTML+=oList.innerHTML;
-  oList.style.width=oList.offsetWidth*2+"px";
+  var aLi = document.getElementsByClassName("count")[0].getElementsByTagName("li");
+  var oImg = document.getElementsByClassName("list")[0];
+  var aBtn = document.getElementsByClassName("count")[1].getElementsByTagName("li");
+  var globalIndex = 0;
+  var dirction = 10;
+  var isRun = true;
+  var isTimer = true;
 
-  setInterval(function () {
-      if(isChange && isChange2){
-          changeImg(++globalIndex);
-          dirction = -10;
-      }
-  },2000);
-
-  oBox.onmouseover=function () {
-      isChange = false;
-  };
-
-  oBox.onmouseout = function () {
-      isChange = true;
-  };
-
-  for(var j = 0;j<aNum.length ;j++){
-      aNum[j].index = j;
-      aNum[j].onclick = function () {
-          if(isChange2){
-              var thisGolbal = globalIndex;
-              globalIndex = this.index;
-              changeImg(this.index);
-              this.index>thisGolbal ? dirction = -10:dirction = 10;
-          }
-      }
-  }
+  oImg.style.width = oImg.offsetWidth + 490 +"px";
 
   function changeImg(index) {
+      isRun = false;
 
-      if(index == -1){
-          oList.style.left = -oList.offsetWidth/2+"px";
-          globalIndex = index = 4;
-      }
-      if(index == 5){
-          globalIndex = 0
-      }
+    if(index>globalIndex){
+      dirction = 10;
+    }else{
+      dirction = -10;
+    }
+      globalIndex = index;
 
-      for(var j=0;j<aNum.length;j++){
-          aNum[j].className="";
-      }
-      aNum[globalIndex].className="active";
+    if(index == -1){
+        oImg.style.left = -(oImg.offsetWidth -490)+"px";
+        globalIndex = 4;
+        index = 4;
+    }
+    if(index == 5){
+      globalIndex = 0;
+    }
 
-      timer = setInterval(function () {
-          isChange2=false;
-          if(oList.offsetLeft!=-index*490){
-              oList.style.left = oList.offsetLeft+dirction+"px";
-          }else{
-              if(index == 5){
-                  oList.style.left = 0;
-              }
-              clearInterval(timer);
-              isChange2 = true;
+    for(var j=0;j<aLi.length;j++){
+      aLi[j].className="";
+    }
+    aLi[globalIndex].className = "active";
+    var timer = setInterval(function () {
+        console.log(oImg.offsetLeft+"+"+-index*490);
+        if(oImg.offsetLeft==-index*490){
+          clearInterval(timer);
+          isRun = true;
+          globalIndex = index;
+          if(index==5){
+              oImg.style.left = 0;
+              globalIndex = 0
           }
-      },10);
+        }else{
+          oImg.style.left = oImg.offsetLeft - dirction+"px";
+        }
+
+    },10);
+
+
   }
 
-  for(var k=0;k<aBtn.length;k++){
-      aBtn[k].onclick = function () {
-          if(isChange2){
-              var thisBtn= this.getAttribute("this-type");
-              if(thisBtn == "next"){
-                  changeImg(globalIndex+=1);
-                  dirction = -10;
-              }else{
-                  changeImg(globalIndex -= 1);
-                  dirction = 10;
-              }
-          }
 
+  for (var i=0;i<aLi.length;i++){
+    aLi[i].index = i;
+    aLi[i].onmouseover=function () {
+      if(isRun){
+          changeImg(this.index);
       }
+    }
   }
+
+
+  aBtn[0].onclick = function () {
+      if(isRun){
+          changeImg(globalIndex-1);
+      }
+
+  };
+  aBtn[1].onclick = function () {
+      if(isRun){
+          changeImg(globalIndex+1);
+      }
+
+  };
+
+ setInterval(function () {
+     if(isRun && isTimer){
+         changeImg(globalIndex+1);
+     }
+ },1000);
+
+  oBox.onmouseover= function () {
+      isTimer = false;
+  }
+  oBox.onmouseout = function () {
+      isTimer = true;
+  }
+
+
+
+
+
+
+
+
+
+
+
+//  var oBox = document.getElementById("box");
+//  var aUl = document.getElementsByTagName("ul");
+//  var aNum = aUl[1].getElementsByTagName("li");
+//  var aBtn = aUl[2].getElementsByTagName("li");
+//  var oList = document.getElementById("silder-list")
+//  var globalIndex=0;
+//  var dirction = -10;
+//  var timer;
+//  var isChange = true;
+//  var isChange2 = true;
+//  oList.innerHTML+=oList.innerHTML;
+//  oList.style.width=oList.offsetWidth*2+"px";
+//
+//  setInterval(function () {
+//      if(isChange && isChange2){
+//          changeImg(++globalIndex);
+//          dirction = -10;
+//      }
+//  },2000);
+//
+//  oBox.onmouseover=function () {
+//      isChange = false;
+//  };
+//
+//  oBox.onmouseout = function () {
+//      isChange = true;
+//  };
+//
+//  for(var j = 0;j<aNum.length ;j++){
+//      aNum[j].index = j;
+//      aNum[j].onclick = function () {
+//          if(isChange2){
+//              var thisGolbal = globalIndex;
+//              globalIndex = this.index;
+//              changeImg(this.index);
+//              this.index>thisGolbal ? dirction = -10:dirction = 10;
+//          }
+//      }
+//  }
+//
+//  function changeImg(index) {
+//
+//      if(index == -1){
+//          oList.style.left = -oList.offsetWidth/2+"px";
+//          globalIndex = index = 4;
+//      }
+//      if(index == 5){
+//          globalIndex = 0
+//      }
+//
+//      for(var j=0;j<aNum.length;j++){
+//          aNum[j].className="";
+//      }
+//      aNum[globalIndex].className="active";
+//
+//      timer = setInterval(function () {
+//          isChange2=false;
+//          if(oList.offsetLeft!=-index*490){
+//              oList.style.left = oList.offsetLeft+dirction+"px";
+//          }else{
+//              if(index == 5){
+//                  oList.style.left = 0;
+//              }
+//              clearInterval(timer);
+//              isChange2 = true;
+//          }
+//      },1);
+//  }
+//
+//  for(var k=0;k<aBtn.length;k++){
+//      aBtn[k].onclick = function () {
+//          if(isChange2){
+//              var thisBtn= this.getAttribute("this-type");
+//              if(thisBtn == "next"){
+//                  changeImg(globalIndex+=1);
+//                  dirction = -10;
+//              }else{
+//                  changeImg(globalIndex -= 1);
+//                  dirction = 10;
+//              }
+//          }
+//
+//      }
+//  }
 
 
 </script>
