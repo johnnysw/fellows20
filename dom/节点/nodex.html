@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="box">
+  <ul id="box1"></ul>
+</div>
+<script>
+  var oBox = document.getElementById("box");
+  var oDiv = document.createElement("div");
+  var oUL = document.getElementById("box1");
+    oDiv.innerText= "111";
+    oDiv.className="aa";
+    //console.log(oBox.cloneNode());
+//    oBox.replaceChild(oDiv,oUL);
+//    console.log(oBox.hasChildNodes());
+    //oBox.removeChild(oDiv);
+  var obj = oBox.innerHTML;
+  oBox.innerHTML += obj;
+
+</script>
+</body>
+</html>

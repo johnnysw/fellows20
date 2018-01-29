@@ -92,9 +92,11 @@
   <script>
     var aUl = document.getElementsByTagName("ul");
     var aImg = aUl[0].getElementsByTagName("li");
+    var oBox = document.getElementsByClassName("box")[0];
     var aLbt = aUl[1].getElementsByTagName("li");
     var aRbt = aUl[2].getElementsByTagName("li");
     var globalIndex=0;
+    var isRun = true
 
     function changeImg(index) {
         if(index == 5){
@@ -106,7 +108,6 @@
             globalIndex=4;
         }
 
-        console.log(index);
         for(var j =0;j<aRbt.length;j++){
             aRbt[j].className="";
             aImg[j].style.display="none";
@@ -135,7 +136,18 @@
         }
     }
     
+     setInterval(function () {
+        if(isRun){
+            changeImg(++globalIndex)
+        }
+    },1000);
 
+    oBox.onmouseover = function () {
+      isRun = false;
+    }
+    oBox.onmouseout = function () {
+      isRun =true;
+    }
     
   </script>
 </body>

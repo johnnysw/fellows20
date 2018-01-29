@@ -17,50 +17,185 @@
 <div class="change-div"></div>
 <div class="change-div"></div>
 <script>
-  var oDiv = document.getElementsByClassName("change-div");
-//  var timer;
-//  oDiv[0].onmouseover = function () {
-//
-//      clearInterval(timer);
-//      timer =setInterval(function () {
-//
-//          oDiv[0].style.width = oDiv[0].offsetWidth + 10 +"px";
-//      },50)
-//  }
-//  oDiv[0].onmouseout = function () {
-//      clearInterval(timer);
-//      timer= setInterval(function () {
-//          oDiv[0].style.width = oDiv[0].offsetWidth - 10 +"px"
-//      },50)
-//  }
+  var aDiv = document.getElementsByClassName("change-div");
+//  var oDiv1 = document.getElementsByClassName("change-div")[1];
+//  var oDiv2 = document.getElementsByClassName("change-div")[2];
+
+for(var i=0 ;i<aDiv.length;i++){
+    aDiv[i].index = i;
+    aDiv[i].onmouseover = function () {
+       clearInterval(this.timer);
+       var This = this;
+       this.timer = setInterval(function () {
+           if(aDiv[This.index].offsetWidth == 600){
+               clearInterval(This.timer);
+           }else{
+               aDiv[This.index].style.width = aDiv[This.index].offsetWidth+10+"px";
+           }
+
+        },50);
+    }
+
+    aDiv[i].onmouseout = function () {
+        clearInterval(this.timer);
+        var This = this;
+        this.timer = setInterval(function () {
+            if(aDiv[This.index].offsetWidth==200){
+                clearInterval(This.timer);
+            }else{
+                aDiv[This.index].style.width = aDiv[This.index].offsetWidth - 10 + "px";
+            }
+
+        },50)
+    }
+}
 
 
-  for(var i =0;i<oDiv.length;i++){
-     bigChange(oDiv[i]);
+
+
+
+  var timer = [];
+  oDiv.onmouseover = function () {
+      clearInterval(timer[0]);
+      timer[0] =setInterval(function () {
+          if(oDiv.offsetWidth >=600){
+              clearInterval(timer[0]);
+          }else{
+              oDiv.style.width = oDiv.offsetWidth+10+"px";
+          }
+      },50);
+  }
+  oDiv.onmouseout = function () {
+      clearInterval(timer[0]);
+      timer[0] = setInterval(function () {
+          if(oDiv.offsetWidth == 200){
+              clearInterval(timer[0]);
+          }else{
+              oDiv.style.width = oDiv.offsetWidth-10+"px";
+          }
+
+      },50)
   }
 
-  function bigChange(obj) {
-        obj.onmouseover = function () {
-            clearInterval(obj.timer);
-            obj.timer = setInterval(function () {
-                if (obj.offsetWidth > 600) {
-                    clearInterval(obj.timer);
-                } else {
-                    obj.style.width = obj.offsetWidth + 10 + "px";
-                }
-            }, 10)
-        }
-        obj.onmouseout = function () {
-            clearInterval(obj.timer);
-            obj.timer = setInterval(function () {
-                if (obj.offsetWidth <= 200) {
-                    clearInterval(obj.timer);
-                } else {
-                    obj.style.width = obj.offsetWidth - 10 + "px";
-                }
-            }, 10)
-        }
+  oDiv1.onmouseover = function () {
+      clearInterval(timer[1]);
+      timer[1] =setInterval(function () {
+          if(oDiv1.offsetWidth >=600){
+              clearInterval(timer[1]);
+          }else{
+              oDiv1.style.width = oDiv1.offsetWidth+10+"px";
+          }
+      },50);
   }
+  oDiv1.onmouseout = function () {
+      clearInterval(timer[1]);
+      timer[1] = setInterval(function () {
+          if(oDiv1.offsetWidth == 200){
+              clearInterval(timer[1]);
+          }else{
+              oDiv1.style.width = oDiv1.offsetWidth-10+"px";
+          }
+
+      },50)
+  }
+
+  oDiv.onmouseover = function () {
+      clearInterval(timer);
+      timer =setInterval(function () {
+          if(oDiv.offsetWidth >=600){
+              clearInterval(timer);
+          }else{
+              oDiv.style.width = oDiv.offsetWidth+10+"px";
+          }
+      },50);
+  }
+  oDiv.onmouseout = function () {
+      clearInterval(timer);
+      timer = setInterval(function () {
+          if(oDiv.offsetWidth == 200){
+              clearInterval(timer);
+          }else{
+              oDiv.style.width = oDiv.offsetWidth-10+"px";
+          }
+
+      },50)
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  for(var i =0;i<oDiv.length;i++){
+//     bigChange(oDiv[i]);
+//  }
+//
+//  function bigChange(obj) {
+//        obj.onmouseover = function () {
+//            clearInterval(obj.timer);
+//            obj.timer = setInterval(function () {
+//                if (obj.offsetWidth > 600) {
+//                    clearInterval(obj.timer);
+//                } else {
+//                    obj.style.width = obj.offsetWidth + 10 + "px";
+//                }
+//            }, 10)
+//        }
+//        obj.onmouseout = function () {
+//            clearInterval(obj.timer);
+//            obj.timer = setInterval(function () {
+//                if (obj.offsetWidth <= 200) {
+//                    clearInterval(obj.timer);
+//                } else {
+//                    obj.style.width = obj.offsetWidth - 10 + "px";
+//                }
+//            }, 10)
+//        }
+//  }
+
+//  for(var i = 0;i<oDiv.length;i++){
+//    oDiv[i].onmouseover = function () {
+//      clearInterval(this.timer);
+//      var This = this;
+//      this.timer = setInterval(function () {
+//        if(This.offsetWidth>=600){
+//          clearInterval(This.timer);
+//        }else{
+//          This.style.width = This.offsetWidth + 10 +"px";
+//        }
+//      },10)
+//    };
+//
+//    oDiv[i].onmouseout = function () {
+//      clearInterval(this.timer);
+//      var This = this;
+//      this.timer = setInterval(function () {
+//        if(This.offsetWidth<=200){
+//          clearInterval(This.timer);
+//        }else{
+//          This.style.width = This.offsetWidth - 10 + "px";
+//        }
+//      },10)
+//    };
+//  }
+
 
 
 </script>

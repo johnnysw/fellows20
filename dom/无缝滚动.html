@@ -65,35 +65,74 @@
     <button id="prev">向右</button>
   </div>
   <script>
+
     var oUl = document.getElementsByTagName("ul")[0];
     var oPrev = document.getElementById("prev");
     var oNext = document.getElementById("next");
-    var thisKey = -5;
-    var isRun = false;
+    var dirction = -10;
+
     oUl.innerHTML+=oUl.innerHTML;
-    oUl.style.width = oUl.offsetWidth * 2+"px";
+    oUl.style.width = oUl.offsetWidth*2+"px";
+
+    setInterval(function () {
+
+      oUl.style.left = oUl.offsetLeft +dirction + "px";
+      if(oUl.offsetLeft <= -oUl.offsetWidth/2){
+        oUl.style.left = 0;
+      }
+      if(oUl.offsetLeft > 0){
+        oUl.style.left = -oUl.offsetWidth/2+"px";
+      }
+    },50);
 
     oPrev.onclick = function () {
-        thisKey = 5;
-        isRun = true;
+        dirction = -10;
     }
 
     oNext.onclick = function () {
-        thisKey = -5
-        isRun = true;
+        dirction = 10;
     }
 
-    setInterval(function () {
-      if(isRun){
-        oUl.style.left = oUl.offsetLeft+thisKey+"px";
-        if(oUl.offsetLeft <= -oUl.offsetWidth/2){
-            oUl.style.left = 0;
-        }
-        if(oUl.offsetLeft >0){
-            oUl.style.left = -oUl.offsetWidth/2+6+"px";
-        }
-      }
-    },30);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    var thisKey = -5;
+//    var isRun = false;
+//    oUl.innerHTML+=oUl.innerHTML;
+//    oUl.style.width = oUl.offsetWidth * 2+2+"px";
+//
+//    oPrev.onclick = function () {
+//        thisKey = 5;
+//        isRun = true;
+//    }
+//
+//    oNext.onclick = function () {
+//        thisKey = -5
+//        isRun = true;
+//    }
+//
+//    setInterval(function () {
+//      if(isRun){
+//        oUl.style.left = oUl.offsetLeft+thisKey+"px";
+//        if(oUl.offsetLeft <= -oUl.offsetWidth/2){
+//            oUl.style.left = 0;
+//        }
+//        if(oUl.offsetLeft >0){
+//            oUl.style.left = -oUl.offsetWidth/2+6+"px";
+//        }
+//      }
+//    },30);
 
   </script>
 </body>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+  </script>
+</head>
+<body>
+<div id = "box">
+  <div class="aa bb"></div>
+  <div class="aa"></div>
+  <div class="aa bb"></div>
+  <div class="aa"></div>
+  <div class="aa cc"></div>
+</div>
+<div class="aa bb"></div>
+
+<img src="http://img.hb.aicdn.com/6f502e36018bf66b0c4ce1815f8069b4f8a60817758b3-AJfY0Y" alt="">
+<script>
+    var aDiv = document.getElementsByTagName("div");
+    var oBox = document.getElementById("box");
+    function getClassName(className,obj) {
+
+        if(document.querySelectorAll())
+
+        var thisObjList = obj.getElementsByTagName("*");
+        var aArr = [];
+
+        for(var i = 0;i<thisObjList.length;i++){
+            var thisClassList = thisObjList[i].classList;
+            for(var j=0;j<thisClassList.length;j++){
+                if(thisClassList[j]==className){
+                    aArr.push(thisObjList[i]);
+                }
+            }
+        }
+        return aArr;
+    }
+
+ // var classBB =  getClassName("bb",oBox);
+
+  console.log(oBox.childNodes.item(0));
+
+</script>
+</body>
+</html>
