@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="js/jquery-3.3.1.js"></script>
+  <style>
+
+  </style>
+  <script>
+
+
+
+
+  </script>
+</head>
+<body>
+<div id = "box">
+  <div class="aa">
+    <p>1</p>
+    <p class="bb">2</p>
+    <p>3</p>
+    <p>4</p>
+  </div>
+  <div>1111</div>
+</div>
+<script>
+    $(function () {
+
+    })
+  var oBox = document.getElementById("box");
+  var $box = $("#box");
+  var $aa = $(".aa");
+  var $p =$("p");
+  $("p").click(function () {
+      console.log($(this).index());
+      $(this).addClass("active");
+      $(this).removeClass("active");
+  });
+    $(".bb").click(function () {
+        $(this).css("display","none");
+    })
+    $("p").eq(1).css("display","none");
+//  var $child = $("#box div").css("color","blue");
+  //$aa.html("1111");
+//  console.log($child);
+//  console.log($("").index());
+//  console.log($box.html());
+//
+//  console.log($(oBox).html());
+//  console.log($box);
+</script>
+
+
+</body>
+</html>

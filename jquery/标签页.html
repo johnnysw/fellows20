@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>简易选项卡</title>
+  <style>
+    body,ul,li{margin:0;padding:0;}
+    body{font:12px/1.5 Tahoma;}
+    #outer{width:450px;margin:10px auto;}
+    #tab{overflow:hidden;zoom:1;background:#000;border:1px solid #000;}
+    #tab li{float:left;color:#fff;height:30px;cursor:pointer;line-height:30px;list-style-type:none;padding:0 20px;}
+    #tab li.active{color:#000;background:#ccc;}
+    #content{border:1px solid #000;border-top-width:0;}
+    #content ul{line-height:25px;display:none;margin:0 30px;padding:10px 0;}
+  </style>
+  <script src="js/jquery-3.3.1.js"></script>
+</head>
+<body>
+<div id="outer">
+  <ul id="tab">
+    <li class="active">第一课</li>
+    <li class="">第二课</li>
+    <li class="">第三课</li>
+  </ul>
+  <div id="content">
+    <ul style="display: block">
+      <li>网页特效原理分析</li>
+      <li>网页特效原理分析</li>
+      <li>网页特效原理分析</li>
+      <li>网页特效原理分析</li>
+      <li>第一页</li>
+    </ul>
+    <ul class="aa">
+      <li>第二页</li>
+      <li>改变网页背景颜色</li>
+    </ul>
+    <ul>
+      <li>第三页</li>
+      <li>JavaScript组成：ECMAScript、DOM、BOM，JavaScript兼容性来源</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+
+  $("#tab > li").click(function () {
+    $("#tab > li").removeClass("active");
+    $("#content > ul").css("display","none");
+    $(this).addClass('active');
+    $("#content > ul").eq($(this).index()).css("display","block");
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  $("#tab > li").click(function () {
+//      var thisIndex = $(this).index();
+//      $("#content > ul").hide();
+//      $(this).siblings("li").removeClass("active");
+//      $(this).addClass("active");
+//      $("#content > ul").eq(thisIndex).show();
+//  })
+</script>
+</body>
+</html>

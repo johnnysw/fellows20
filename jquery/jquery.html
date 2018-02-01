@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="js/jquery-3.3.1.js"></script>
+  <script>
+    $(document).ready(function () {
+        console.log("ready:"+$("p").length);
+    });
+    $(function () {
+        console.log("ready:"+$("p").length);
+    });
+    window.onload=function () {
+        console.log("onload:"+$("p").length);
+    }
+
+  </script>
+</head>
+
+<body>
+<div id="aa">
+  <p>1</p>
+  <p>2</p>
+  <p>3</p>
+  <p>4</p>
+  <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1517457402386&di=ea35fed3976975d614e5756b869c83a8&imgtype=0&src=http%3A%2F%2Fimg.taopic.com%2Fuploads%2Fallimg%2F130331%2F240460-13033106243430.jpg" alt="">
+</div>
+<script>
+  console.log($("p").length);
+  var oAa = document.getElementById("aa");
+  var $aa = $("p");
+  console.log(oAa);
+  console.log($aa);
+</script>
+</body>
+</html>
