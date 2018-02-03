@@ -11,15 +11,16 @@
 <body>
 <h1>你爱好的运动是？</h1>
 <form action="xx.java">
-  <input type="checkbox" name="hobby">足球
-  <input type="checkbox" name="hobby">排球
-  <input type="checkbox" name="hobby">篮球
-  <input type="checkbox" name="hobby">羽毛球
+  <input type="checkbox" name="hobby" value="1">足球
+  <input type="checkbox" name="hobby" value="2">排球
+  <input type="checkbox" name="hobby" value="3">篮球
+  <input type="checkbox" name="hobby" value="4">羽毛球
   <br>
   <button id="all" type="button">全选</button>
   <button id="no" type="button">全不选</button>
   <button id="reverse" type="button">反选</button>
 </form>
+<div id="aa">111</div>
 <script src="js/jquery-3.3.1.js"></script>
 <script>
     $(function () {
@@ -31,19 +32,70 @@
             $hobbys.prop('checked', false);
         });
         $('#reverse').on('click', function () {
-            var k =0;
-            for(var i= 0;i<$hobbys.length;i++){
-                if($hobbys.eq(i).prop("checked")){
-                    $hobbys.eq(i).prop("checked",false);
-                    k=i;
-                }else{
-                    $hobbys.eq(i).prop("checked",true);
-                }
-            }
+
+
+            $hobbys.each(function (index,elem) {
+               elem.checked = !elem.checked;
+            });
+
+
+//            for(var i =0;i<$hobbys.length;i++){
+//                if($hobbys.eq(i).prop("checked")){
+//                    $hobbys.eq(i).prop("checked",false);
+//                }else{
+//                    $hobbys.eq(i).prop("checked",true);
+//                }
+//            }
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+// for(var i= 0;i<$hobbys.length;i++){
+//                if($hobbys.eq(i).prop("checked")){
+//                    $hobbys.eq(i).prop("checked",false);
+//                }else{
+//                    $hobbys.eq(i).prop("checked",true);
+//                }
+//            }
+//              $hobbys.each(function (index,elem) {
+//                  if($(elem).prop("checked")){
+//                      $(elem).prop("checked",false);
+//                }else{
+//                      $(elem).prop("checked",true);
+//                }
+//
+//              })
+
+//            $hobbys.each(function (index,elem) {
+//                this.checked=!this.checked;
+//            })
         });
     });
 
 
+    var person = {
+        name:"xiaohong",
+        age:"18",
+        school:"heida"
+    }
+
+    //var a = document.getElementById("aa");
+//    var b = $("#aa").get(0);
+//    console.log(b);
+
+    //$(a).css("color","red");
+
+//    $(person).each(function (index,elem) {
+//        console.log(index);
+//        console.log(elem);
+//    })
 
 </script>
 </body>

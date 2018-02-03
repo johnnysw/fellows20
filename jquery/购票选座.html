@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>在线选座</title>
+  <style type="text/css">
+    *{
+      margin:0;
+      padding:0;
+      box-sizing: border-box;
+    }
+    body{
+      font-size: 16px;
+      background-color: #343636;
+    }
+    ul{
+      list-style: none;
+    }
+    .clearfix:after{
+      content:"";
+      display:block;
+      clear:both;
+    }
+    .container{
+      width: 100%;
+      max-width: 750px;
+      min-width: 320px;
+      position: relative;
+      margin:0 auto;
+      margin-bottom: 6rem;
+    }
+    .header .date{
+      font-size: 1.8rem;
+      width: 750px;
+      height: 94px;
+      line-height: 94px;
+      padding-left: 20px;
+      background-color: #fff;
+    }
+    .prompt{
+      height: 95px;
+      padding:30px 0;
+    }
+    .prompt ul li{
+      height: 35px;
+      line-height: 35px;
+      display: inline-block;
+      margin-left: 30px;
+    }
+    .prompt li span{
+      float: left;
+      font-size: 1.8em;
+      color: #fff;
+      margin-left: 10px;
+    }
+    .prompt li span[class^="color-type"]{
+      width: 45px;
+      height: 35px;
+      background-color: #fff;
+
+    }
+    .prompt li .color-type2{
+      background-color: #fe3f55 !important;
+    }
+    .prompt li .color-type3{
+      background-color: #0099ff !important;
+    }
+    .header .img{
+      text-align: center;
+      border-top: 1px solid #555555;
+    }
+    .content{
+      padding:50px 30px 0;
+    }
+    .content-list{
+      margin-top:30px;
+    }
+    .content-list li{
+      display: inline-block;
+      width: 45px;
+      height: 35px;
+      background-color: #0099ff;
+      margin-left: 10px;
+    }
+    .content-list .empty{
+      background-color:#fff !important;
+    }
+    .content-list .selected{
+      background-color:#fe3f55 !important;
+    }
+    .content-list li:nth-child(6){
+      margin-left: 7.8rem;
+    }
+    .footer{
+      margin-top:30px;
+      border-top:1px solid #555555;
+      font-size: 1.8rem;
+      padding:45px 30px;
+      color: #fff;
+      text-align: left;
+    }
+    .footer p span{
+      float: right;
+    }
+    .bottom{
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+    }
+    .bottom > div{
+      height: 6rem;
+      line-height: 6rem;
+      float: left;
+      font-size: 1.8rem;
+    }
+    .bottom .b-left{
+      padding-left: 45px;
+      width: 27rem;
+      color: #b1b1b1;
+      background-color: #4a4c52;
+    }
+    .bottom .b-left .money{
+      color: #cc3300;
+    }
+    .bottom .b-left .sum{
+      font-size: 1rem;
+      margin-left: 20px;
+    }
+    .bottom .b-right{
+      text-align: center;
+      color: #333;
+      width: 15rem;
+      background-color: #c1a55f;
+    }
+    .s-bar ul li{
+      display: inline-block;
+      height: 3.5rem;
+      line-height: 3.5rem;
+      text-align: center;
+      width: 8rem;
+      color:#cfa972;
+      font-size: 1.8rem;
+      border:1px solid #cfa972;
+      margin:0 0 30px 30px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="date">
+      <p>今天1月6日&nbsp;13:20</p>
+    </div>
+    <div class="prompt">
+      <ul>
+        <li><span class="color-type1"></span><span class="text">可选</span></li>
+        <li><span class="color-type2"></span><span class="text">已选</span></li>
+        <li><span class="color-type3"></span><span class="text">已售</span></li>
+      </ul>
+    </div>
+    <div class="img">
+      <img src="pingmu.png">
+    </div>
+  </div>
+  <div class="content" id="list-content">
+
+  </div>
+  <div class="footer">
+    <p>已选座位<span>最多可选择5个座位</span></p>
+  </div>
+  <div class="s-bar" id='js-s-bar'>
+
+  </div>
+  <div class="bottom">
+    <div class="b-left">
+      <span>合计：</span>
+      <span class="money" id="js-money">¥0</span>
+      <span class="sum" id="js-sum">¥99*0</span>
+    </div>
+    <div class="b-right">确认选座</div>
+  </div>
+</div>
+<script type="text/javascript">
+    var contentList=document.getElementById('list-content');
+    var contentListHtml="";
+    var selectedCount=0;
+    var selectedVal = new Array();
+
+    initContent();
+
+    function check(obj) {
+        var thisType=obj.getAttribute("class");
+        var checkSign=obj.getAttribute("sign");
+        if(thisType=="empty"){
+            obj.setAttribute("class","selected");
+            selectedVal.push(checkSign);
+        }if(thisType=="selected"){
+            obj.setAttribute("class","empty");
+            changeArray(checkSign);
+        }
+        changeSelectedDom();
+        console.log(selectedVal);
+    }
+
+    function changeArray(val) {
+        for(var i=0;i<selectedVal.length;i++){
+            if(selectedVal[i]==val){
+                selectedVal.splice(i,1);
+            }
+        }
+    }
+
+    function changeSelectedDom() {
+        var csdContent=document.getElementById("js-s-bar");
+        var moneyDom=document.getElementById("js-money");
+        var sumDom=document.getElementById("js-sum");
+        var selectedSum=selectedVal.length;
+        var csdHtml='<ul>';
+        for(var i=0;i<selectedVal.length;i++){
+            csdHtml+='<li>'+selectedVal[i]+'</li>';
+        }
+        csdHtml+='</ul>'
+        csdContent.innerHTML=csdHtml;
+        moneyDom.innerHTML='¥'+selectedSum*99;
+        sumDom.innerHTML='¥99*'+selectedSum
+    }
+
+    function initContent() {
+        for(var i=0;i<9;i++){
+            contentListHtml+='<ul class="content-list">';
+            for(var j=0;j<10;j++){
+                var signText=(i+1)+'排'+(j+1)+'座';
+                if(Math.random()>0.5){
+                    contentListHtml+='<li onclick="check(this)" class="sold" sign="'+signText+'"></li>';
+                }else{
+                    contentListHtml+='<li onclick="check(this)" class="empty" sign="'+signText+'"></li>';
+                }
+            }
+            contentListHtml+='</ul>';
+        }
+        document.getElementById('list-content').innerHTML=contentListHtml;
+    }
+
+</script>
+</body>
+</html>

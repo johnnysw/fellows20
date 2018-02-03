@@ -25,22 +25,23 @@
   <div>1111</div>
 </div>
 <script>
-    $(function () {
-
-    })
-  var oBox = document.getElementById("box");
-  var $box = $("#box");
-  var $aa = $(".aa");
-  var $p =$("p");
-  $("p").click(function () {
-      console.log($(this).index());
-      $(this).addClass("active");
-      $(this).removeClass("active");
-  });
-    $(".bb").click(function () {
-        $(this).css("display","none");
-    })
-    $("p").eq(1).css("display","none");
+  $(".bb").siblings("p").css("color","red");
+//    $(function () {
+//
+//    })
+//  var oBox = document.getElementById("box");
+//  var $box = $("#box");
+//  var $aa = $(".aa");
+//  var $p =$("p");
+//  $("p").click(function () {
+//      console.log($(this).index());
+//      $(this).addClass("active");
+//      $(this).removeClass("active");
+//  });
+//    $(".bb").click(function () {
+//        $(this).css("display","none");
+//    })
+//    $("p").eq(1).css("display","none");
 //  var $child = $("#box div").css("color","blue");
   //$aa.html("1111");
 //  console.log($child);

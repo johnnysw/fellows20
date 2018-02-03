@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="js/jquery-3.3.1.js"></script>
+  <style>
+    *{
+      margin: 0;
+    }
+    .box{
+      width: 200px;
+      height: 200px;
+      border: 10px solid;
+      margin: 10px;
+    }
+    .box2{
+      width: 100px;
+      height: 100px;
+      /*background-color: #0000FF;*/
+    }
+  </style>
+</head>
+<body>
+  <!--<div id="box" class="ddd aa bbb" data-id=""></div>-->
+  <!--<input type="text" >-->
+  <!--<input type="checkbox" id="cb" value="111">复选框-->
+  <div class="box">
+    <div class="box2">
+      <a href="">
+        <div class="box4">123</div>
+      </a>
+
+    </div>
+
+  </div>
+
+
+
+  <script>
+    //console.log($("#cb").val());
+//    console.log($(".box").height());
+//    console.log($(".box").innerHeight());
+//    console.log($(".box").outerHeight());
+//    console.log($(".box").offset());
+//    console.log($(".box2").position());
+//    console.log($(".box").clone().get(0));
+//    var aa = $(".box").clone().get(0);
+//    $(".box2").html(aa);
+    //$(".box2").val().html("12");
+    //$("<div class='box3'>sdfsfdd</div>").appendTo(".box2").css("color","red");
+//    console.log($(".box4").text());
+    //$(".box2").before("<div class='box3'>sdfsfdd</div>").css("color","red");
+    $(".box4").unwrap("div");
+  </script>
+</body>
+</html>
