@@ -12,6 +12,7 @@
     #tab li.active{color:#000;background:#ccc;}
     #content{border:1px solid #000;border-top-width:0;}
     #content ul{line-height:25px;display:none;margin:0 30px;padding:10px 0;}
+    #content .active{display: block}
   </style>
   <script src="js/jquery-3.3.1.js"></script>
 </head>
@@ -23,7 +24,7 @@
     <li class="">第三课</li>
   </ul>
   <div id="content">
-    <ul style="display: block">
+    <ul class="active">
       <li>网页特效原理分析</li>
       <li>网页特效原理分析</li>
       <li>网页特效原理分析</li>
@@ -44,10 +45,7 @@
 <script>
 
   $("#tab > li").click(function () {
-    $("#tab > li").removeClass("active");
-    $("#content > ul").css("display","none");
-    $(this).addClass('active');
-    $("#content > ul").eq($(this).index()).css("display","block");
+      $(this).add($("#content ul:eq("+$(this).index()+")")).addClass("active").siblings().removeClass("active");
   });
 
 

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="js/jquery-3.3.1.js"></script>
+</head>
+<div id="father">
+  <div id="box">aaa</div>
+</div>
+<input type="text" id="inp">
+<select name="" id="sel">
+  <option value="">1</option>
+  <option value="">2</option>
+  <option value="">3</option>
+  <option value="">4</option>
+</select>
+<body>
+<script>
+
+  $("#inp").blur(function () {
+      console.log("blur");
+  })
+  $("#inp").focus(function () {
+      console.log("focus");
+  })
+  $("#inp").keydown(function () {
+      console.log("keydown");
+  })
+  $("#inp").keyup(function () {
+      console.log("keyup");
+  })
+  $("#sel").change(function () {
+      console.log("change");
+  })
+//  function fun1() {
+//
+//  }
+//  $("#box").click(function () {
+//      console.log(1);
+//  });
+//  $("#box").on("click",function () {
+//      console.log("2");
+//  });
+//  $("#father").on("click","#box",fun1);
+//  $("#father").off("click","#box",fun1);
+</script>
+</body>
+</html>

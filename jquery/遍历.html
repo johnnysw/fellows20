@@ -8,32 +8,79 @@
 <body>
 <ul>
   <li>list <strong>item 1</strong></li>
-  <li><span>list item 2</span></li>
-  <li>list item 3</li>
+  <li class="cc"><span>list item 2</span></li>
+  <li class="bb">list item 3</li>
   <li class="aa">111</li>
+  <li class="ee">111</li>
+  <li class="">111</li>
+
 </ul>
+<div class="div1">a
+  <div class="div2">b
+    <div class="div3">
+      c
+    </div>
+  </div>
+</div>
 <div>
-  <input type="checkbox" >1
-  <input type="checkbox" checked="checked">2
-  <input type="checkbox">3
-  <p>111</p>
+  <!--<input type="checkbox" >1-->
+  <!--<input type="checkbox" checked="checked">2-->
+  <!--<input type="checkbox">3-->
+  <p><span>span</span><span>span</span></p>
   <div></div>
   <a href="">2222</a>
 </div>
+
+
+<ul id="one" class="level-1">
+  <li class="item-i">I</li>
+  <li id="ii" class="item-ii">II
+    <ul class="level-2">
+      <li class="item-a">A</li>
+      <li class="item-b">B
+        <ul class="level-3">
+          <li class="item-1">1</li>
+          <li class="item-2">2</li>
+          <li class="item-3">3</li>
+        </ul>
+      </li>
+      <li class="item-c">C</li>
+    </ul>
+  </li>
+  <li class="item-iii">III</li>
+</ul>
+
 <script>
-    $("ul").click(function(event) {
-        var $target = $(event.target);
-        if ( $target.is("li") ) {
-            $target.css("background-color", "red");
-        }
-    });
-    if($("p").next().is("a")){
-        console.log("is a");
-    }
-    if($("input").eq(0).is(":checked")){
-        console.log("checked");
-    }
-    !$("li").not(".aa").css("color","red");
+
+//$("li").has("p").css("color","red");
+//console.log($("p").next().is("p"));
+//$("li").not(".aa").css("color","red");
+
+//$("li").slice(-3,-1).css("color","red");
+//$("li").add("a").css("color","red");
+//console.log($("p").contents());
+
+$(".item-a").parentsUntil(".level-1").css("color","red");
+
+//$(".div1").children("div").children("div").end().end().css("color","red");
+
+//$(".div1").find("div").css("color","red");
+
+//$('li.item-a').closest('ul').css('background-color', 'red');
+
+//    $("ul").click(function(event) {
+//        var $target = $(event.target);
+//        if ( $target.is("li") ) {
+//            $target.css("background-color", "red");
+//        }
+//    });
+//    if($("p").next().is("a")){
+//        console.log("is a");
+//    }
+//    if($("input").eq(0).is(":checked")){
+//        console.log("checked");
+//    }
+//    !$("li").not(".aa").css("color","red");
 </script>
 </body>
 </html>
