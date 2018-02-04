@@ -160,7 +160,7 @@
       </ul>
     </div>
     <div class="img">
-      <!--<img src="pingmu.png">-->
+      <img src="pingmu.png">
     </div>
   </div>
   <div class="content" id="list-content">
@@ -182,60 +182,54 @@
   </div>
 </div>
 <script type="text/javascript">
-  var thisArr = [];
-
-  function initList() {//初始化列表
+  var checkedList = [];
+  function initList() {
       var listHtml = "";
       for(var i = 0;i<10;i++){
           listHtml+="<ul class='content-list'>";
-          for(var j=0;j<10;j++){
+          for(var j =0;j<10;j++){
               if(Math.random()>0.5){
-                  listHtml+='<li class="empty" sign="'+(i+1)+'排'+(j+1)+'座"></li>'
+                  listHtml+='<li class="sold" sign='+(i+1)+'排'+(j+1)+'座></li>'
               }else{
-                  listHtml+='<li class="sold" sign="'+(i+1)+'排'+(j+1)+'座"></li>'
+                  listHtml+='<li class="empty" sign='+(i+1)+'排'+(j+1)+'座></li>'
               }
-
           }
-          listHtml+="</ul>"
+          listHtml+="</ul>";
       }
       $("#list-content").html(listHtml);
+      initClick();
   }
-  
   $("#list-content").on("click","li",function () {
-      if($(this).attr("class")=="empty" && thisArr.length<5){//添加选中状态
-          $(this).attr("class","selected");
-          thisArr.push($(this).attr("sign"));
-      }else if($(this).attr("class")=="selected"){//取消选中状态
-          $(this).attr("class","empty");
-          removeArr($(this).attr("sign"));
-
-      }
-      changeSelect();
+      var className = $(this).attr("class");
+      var checkSign = $(this).attr("sign");
+          if(className=="empty" && checkedList.length<5){
+              $(this).attr("class","selected");
+              checkedList.push(checkSign);
+          }else if(className=="selected"){
+              $(this).attr("class","empty");
+              removeCheck(checkSign);
+          }
+      reloadInfo();
   });
-
-  function removeArr(arr) {//移除数组元素
-    for(var i =0;i<thisArr.length;i++){
-        if(thisArr[i]==arr){
-            thisArr.splice(i,1);
-        }
-    }
+  function removeCheck(arr) {
+      for(var i =0;i<checkedList.length;i++){
+          if(checkedList[i]==arr){
+              checkedList.splice(i,1);
+          }
+      }
   }
-  
-  function changeSelect() {//修改选中状态
-      var thisHtml = "<ul>";
-      for(var i=0;i<thisArr.length;i++){
-          thisHtml+="<li>"+ thisArr[i]+"</li>"
+  function reloadInfo() {
+      var thisHtml = "";
+      $("#js-money").html("¥"+checkedList.length*99);
+      $("#js-sum").html("¥99*"+checkedList.length);
+      thisHtml+="<ul>";
+      for (var i=0;i<checkedList.length;i++){
+          thisHtml+="<li>"+checkedList[i]+"</li>";
       }
       thisHtml+="</ul>";
       $("#js-s-bar").html(thisHtml);
-      $("#js-money").html("¥"+thisArr.length*99);
-      $("#js-sum").html("¥99*"+thisArr.length);
   }
-
   initList();
-
-
-
 </script>
 </body>
 </html>
