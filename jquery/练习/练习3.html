@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style type="text/css">
+    body{
+      font:normal 12px/17px Arial;
+    }
+    div{
+      padding:2px;
+    }
+    input, textarea {
+      width: 12em;
+      border: 1px solid #888;
+    }
+    .focus {
+      border: 1px solid #f00;
+      background: #fcc;
+    }
+  </style>
+  <!--   引入jQuery -->
+  <script src="../js/jquery-3.3.1.js"></script>
+  <script>
+      /*
+        文本框得到/失去焦点练习，功能：
+          1.文本框得到/失去焦点时动态变换文本框样式
+          2.文本框得到时，清除文本框默认值；失去焦点时，如果文本框值未改变，恢复默认值，否则使用修改值
+      */
+      //文档就绪函数
+          //思路：
+          //功能1：选中所有的输入框，注册获得焦点事件，添加样式：focus；注册失去焦点事件，动态移除样式：focus
+          //功能2：获得焦点时，如果文本框的值等于默认值，则清空文本框；失去焦点时，如果文本框的值等于空字符串，则恢复默认值
+          //提示：defaultValue属性可以得到文本框的默认值
+          //要求：尽量使用链式操作
+
+  </script>
+
+
+</head>
+<body>
+<form action="" method="post" id="regForm">
+  <fieldset>
+    <legend>个人基本信息</legend>
+    <div>
+      <label  for="username">名称:</label>
+      <input id="username" type="text" value="名称" />
+    </div>
+    <div>
+      <label for="pass">密码:</label>
+      <input id="pass" type="password" value="密码" />
+    </div>
+    <div>
+      <label for="msg">详细信息:</label>
+      <textarea id="msg" rows="2" cols="20">详细信息</textarea>
+    </div>
+  </fieldset>
+</form>
+<script>
+    $(function(){
+        $(":input").focus(function(){
+            //$(this).addClass("focus").val(this.value==this.defaultValue?"":this.value);
+            $(this).addClass("focus");
+            if(/*this.value*/$(this).val() == this.defaultValue){
+                //$(this).val("");
+                this.value = "";
+            }
+        }).blur(function(){
+            $(this).removeClass("focus").val(this.value==""?this.defaultValue:this.value);
+        });
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    #box2{
+      color: red;
+    }
+  </style>
+  <script src="js/jquery-3.3.1.js"></script>
+  <script>
+
+
+
+  </script>
+</head>
+<!--<iframe src="http://www.baidu.com" frameborder="0" width="1000" height="1000"></iframe>-->
+<body>
+<h1>核心页面</h1>
+<div id="box"></div>
+<script>
+
+  $("#box").load("load.html",function () {
+      $("#box2").html("hello");
+  });
+
+//  $(function () {
+//      $("#box2").html("hello");
+//  })
+
+//  var person = {
+//      name:"xiao"
+//  };
+//  var person2 = {
+//      age:"3"
+//  };
+//  var pesron3={
+//      schoole:"heida"
+//  };
+//  person.age=person2.age;
+//
+//  $.extend(person,person2,pesron3);
+//  console.log(person);
+//  console.log(person2);
+</script>
+</body>
+</html>

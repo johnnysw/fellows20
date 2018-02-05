@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="js/jquery-3.3.1.js"></script>
+  <style>
+    .div1{
+      width: 400px;
+      height: 400px;
+      background: blue;
+    }
+    .div2{
+      width: 300px;
+      height: 300px;
+      background: red;
+    }
+    .div3{
+      width: 200px;
+      height: 200px;
+      background: yellow;
+    }
+  </style>
+</head>
+<body>
+<input type="checkbox">1
+<input type="checkbox">2
+<input type="checkbox">3
+<div class="div1">
+  <div class="div2">
+    <div class="div3"></div>
+  </div>
+</div>
+<script>
+
+//  $(":input").click(function () {
+//      console.log(this);
+//  })
+
+  //$(":input").trigger("click");
+//  $(":input").triggerHandler("click");
+
+
+
+
+
+
+
+
+//  $(":input").click(function () {
+//      console.log(this);
+//  });
+//
+  $(".div1").click(function () {
+      console.log("div1")
+  });
+  $(".div2").click(function () {
+      console.log("div2")
+  })
+  $(".div3").click(function () {
+      console.log("div3");
+  })
+
+$(".div3").triggerHandler("click");
+
+
+
+
+
+//
+//  $(".div3").triggerHandler("click");
+  //$(":input").triggerHandler("click");
+
+</script>
+</body>
+</html>

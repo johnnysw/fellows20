@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="js/jquery-3.3.1.js"></script>
+</head>
+<body>
+<input type="text" value="name" id="inp">
+<button id="btn">按钮</button>
+<script>
+  var oInp =document.getElementById("inp");
+  var oBtn =document.getElementById("btn");
+
+
+  oBtn.onclick=function () {
+      console.log(oInp.value);
+      console.log(oInp.defaultValue);
+  }
+  $("#inp").focus(function () {
+      console.log(1);
+  }).blur(function () {
+      console.log(2);
+  })
+//  $("#inpu").siblings().removeClass();
+
+</script>
+</body>
+</html>

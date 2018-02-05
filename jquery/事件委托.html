@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="js/jquery-3.3.1.js" ></script>
+</head>
+<body>
+<button id="add-btn">添加</button>
+<button id="get-new">获取</button>
+<ul id="oul">
+  <li>第1个</li>
+  <li>第2个</li>
+  <li>第3个</li>
+  <li>第4个</li>
+</ul>
+<script>
+  var i=0;
+  $("#add-btn").click(function () {
+      $("#oul").append("<li>新添加第"+(++i)+"个</li>");
+  });
+  $("#oul li").click(function () {
+      console.log(this);
+  });
+
+
+  $("#get-new").click(function () {
+      console.log($("li").eq(4).get(0));
+  })
+</script>
+</body>
+</html>

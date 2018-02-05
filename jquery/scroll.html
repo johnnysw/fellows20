@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="js/jquery-3.3.1.js"></script>
+  <style>
+    #box1 div{
+      height: 1000px;
+      width: 200px;
+      background: blue;
+    }
+    #go-top{
+      position: fixed;
+      bottom: 100px;
+      left: 100px;
+    }
+    #box1{
+      height: 500px;
+      width: 300px;
+      overflow: scroll;
+    }
+  </style>
+</head>
+<body>
+<div id="box1">
+  <div id="box">
+
+  </div>
+  <div style="background: yellow;"></div>
+</div>
+
+  <button id="go-top">返回顶部</button>
+  <script>
+    $("#go-top").click(function () {
+        $("#box1").animate({
+            scrollTop:0
+        },1000)
+    })
+//  $("#box1").scroll(function () {
+//      console.log($(this).scrollTop());
+//      if($(this).scrollTop() >1000){
+//          alert("滚动")
+//      }
+//  })
+
+//    $(window).scroll(function () {
+//        console.log($(this).scrollTop());
+//    })
+//  $("#go-top").click(function () {
+//      $("#box1").animate({
+//          scrollTop:0
+//      },1000);
+//  })
+  </script>
+</body>
+</html>
