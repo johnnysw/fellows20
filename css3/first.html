@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .div1{
+      height: 100px;
+      width: 200px;
+      border:2px solid #000;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      word-wrap: break-word;
+      border-left-color: transparent;
+    }
+    .div2{
+      width: 100px;
+      height: 100px;
+      background: #000000;
+      -webkit-border-radius: 10px 20px;
+      border-radius: 10px 20px;
+    }
+    input[type="checkbox"]:checked{
+      margin:10px;
+    }
+    .border-img{
+      width:400px;
+      height:100px;
+      border:27px solid orange;
+
+
+      border-image:url(img/border.png) 27 round;
+    }
+    button{
+      height: 50px;
+      width: 100px;
+      background-image: linear-gradient(to bottom,#ff0,#04c);
+      /*background: radial-gradient(circle, #006, #00a 90%, #0000af 100%, white 100%);;*/
+    }
+    .flex-box{
+      display: -webkit-box;/*旧语法*/
+      display:flex;/*新语法*/
+      -webkit-box-orient:vertical;/*设置弹性盒模型展示方式*/
+    }
+    .flex-box div{
+      -webkit-box-flex: 1;/*旧语法*/
+      flex-grow: 1;/*新语法*/
+      width:0;/*当有文本内容时设置*/
+    }
+  </style>
+</head>
+<body>
+  <div class="div1">
+    你好就啊路上风景卢卡斯肌肤轮廓使肌肤立刻就收到了房间快睡觉两件事就
+  </div>
+<div class="div2"></div>
+  <input type="checkbox" checked>123
+<div class="border-img"></div>
+<button>按钮</button>
+</body>
+</html>
