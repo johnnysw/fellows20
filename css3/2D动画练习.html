@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .box{
+      position: absolute;
+      top: 200px;
+      left: 50%;
+      margin-left: -100px;
+      width: 200px;
+      height: 200px;
+      border: 1px dashed #000000;
+    }
+    .div1{
+      width: 200px;
+      height: 200px;
+      background: red;
+      /*transition: ;*/
+      /*transform: rotate(-45deg);*/
+      /*transform-origin: ;*/
+      /*transform: translate(100px,100px);*/
+      /*transform: scale(.5);*/
+      /*transform: scale(-1);*/
+      transition: all 1s linear 2s;
+
+    }
+    .div1:hover{
+      width: 300px;
+      transform: rotate(45deg);
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="div1">小伙伴20</div>
+  </div>
+</body>
+</html>

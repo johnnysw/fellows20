@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .border-div{
+      width: 100px;
+      height: 100px;
+      border:1px dashed #000;
+      position: absolute;
+      top: 300px;
+      left: 300px;
+    }
+    .content-div{
+      width: 100px;
+      height: 100px;
+      background: #0000FF;
+      /*transform: rotate(45deg);*/
+      /*transform-origin: 0 20px;*/
+      /*transform: scale(.5,.8);*/
+      /*transform: scale(-.5);*/
+      /*transform: scaleY(.5);*/
+      /*transform: translate(100px,100px);*/
+    }
+    .border-div2{
+      width: 300px;
+      height: 300px;
+      border:1px dashed #000;
+      position: absolute;
+      top: 500px;
+      left: 300px;
+    }
+    .content-div2{
+      width: 100px;
+      height: 100px;
+      background: #0000FF;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+    }
+  </style>
+</head>
+<body>
+<div class="border-div">
+  <div class="content-div">123</div>
+</div>
+<div class="border-div2">
+  <div class="content-div2">123</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .box{
+      width: 100px;
+      height: 100px;
+      border:1px dashed #dddddd;
+      perspective: 1000px;
+      perspective-origin: -1000px -1000px;
+    }
+    .div1{
+      width: 100px;
+      height: 100px;
+      background: red;
+      transform: rotateY(30deg);
+      transform-style: preserve-3d;
+    }
+    .div2{
+      width: 100px;
+      height: 100px;
+      background: green;
+      transform: rotateY(40deg);
+    }
+    .box2{
+      position: relative;
+      width: 100px;
+      height: 100px;
+      border:1px solid #dddddd;
+      perspective: 1000px;
+      perspective-origin: center center;
+      transition: all 1s linear;
+    }
+
+    .div3{
+      width: 200px;
+      height: 200px;
+      background: #ff0000;
+      perspective: 1000px;
+      position: relative;
+      transition: all 2s ease;
+      transform-style: preserve-3d;
+      cursor: pointer;
+    }
+    .div4{
+      width: 200px;
+      height: 200px;
+      background: #00ff00;
+      transform: rotateY(180deg) translateZ(1px);
+      position: absolute;
+      top: 0;
+      left: 0;
+      cursor: pointer;
+
+    }
+    .div3:hover{
+      transform: rotateY(180deg);
+    }
+  </style>
+</head>
+<body>
+<div class="box2">
+  <div class="div3">
+  小伙伴20
+    <div class="div4">
+      唯创网讯
+    </div>
+  </div>
+
+</div>
+  <!--<div class="box">-->
+    <!--<div class="div1">-->
+      <!--<div class="div2"></div>-->
+    <!--</div>-->
+
+  <!--</div>-->
+</body>
+</html>

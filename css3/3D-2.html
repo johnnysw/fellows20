@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .box{
+      position: relative;
+      margin:100px auto;
+      width: 200px;
+      height: 200px;
+      border: 1px dashed #000;
+      perspective: 1000px;
+      /*perspective-origin: 50% 50%;*/
+
+    }
+    .box div{
+      /*position: absolute;*/
+      /*top:0;*/
+      /*left: 0;*/
+
+    }
+    .div1{
+      width: 200px;
+      height: 200px;
+      background: #FF0000;
+      transform-style: preserve-3d;
+      transition: all 1s linear;
+
+
+    }
+    .div2{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200px;
+      height: 200px;
+      background: #0000FF;
+      transform: rotateY(180deg) translateZ(1px);
+
+    }
+    .div1:hover{
+      transform: rotateY(180deg);
+    }
+  </style>
+</head>
+<body>
+<div class="box">
+  <div class="div1">
+    小伙伴20
+    <div class="div2">
+    唯创网讯
+    </div>
+  </div>
+</div>
+</body>
+</html>
