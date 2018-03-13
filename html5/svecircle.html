@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    svg{
+
+    }
+    #box{
+      position: relative;
+    }
+    #count{
+      position: absolute;
+      top: 75px;
+      left: 90px;
+      font-size: 60px;
+      font-weight: bolder;
+
+    }
+    #svg{
+      transform: rotate(-90deg);
+    }
+    #cir{
+      stroke-dashoffset: 0;
+      stroke-dasharray: 628;
+      transition: all 1s linear;
+    }
+  </style>
+</head>
+<body>
+  <div id="box">
+    <svg height="240" width="240" id="svg">
+      <circle cx="120" cy="120" r="100" style="fill: #fff;stroke-width: 20;stroke: #43AEFA"/>
+      <circle id="cir" cx="120" cy="120" r="100" style="fill: transparent;stroke-width: 20;stroke: #F4F1F1"/>
+    </svg>
+    <div id="count">10</div>
+  </div>
+  <script>
+    var oCir = document.querySelector("#cir");
+    var oCount = document.querySelector("#count");
+    var t=10;
+    var once = 628/10;
+    var timer = setInterval(function () {
+        oCount.innerHTML = t;
+        t--;
+        if(t<0){
+           clearInterval(timer);
+        }else{
+
+          oCir.style.strokeDashoffset = once*t-628;
+        }
+
+    },1000)
+  </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    canvas{
+      background: #000000;
+    }
+  </style>
+</head>
+<body>
+<canvas id="can" height="400" width="500">
+
+</canvas>
+<script>
+  var oCan = document.querySelector("#can");
+  var sign = oCan.getContext("2d");
+  sign.lineWidth = 2;
+  sign.strokeStyle = "#ffffff"
+//  sign.beginPath();
+//  sign.moveTo(10,10);
+//  sign.lineTo(100,100);
+//  sign.lineWidth = 10;
+//  sign.strokeStyle = "#dddddd";
+//  sign.stroke();
+
+
+  oCan.onmousedown = function (e) {
+    sign.beginPath();
+    sign.moveTo(e.clientX,e.clientY);
+    oCan.onmousemove=function (e) {
+        sign.lineTo(e.clientX,e.clientY);
+        sign.stroke();
+    }
+    oCan.onmouseup=function () {
+        oCan.onmousemove = null;
+    }
+  }
+</script>
+</body>
+</html>

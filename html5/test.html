@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<input type="text" autocomplete="" autofocus>
+<div id="div1">11</div>
+<audio src="media/music.mp3" autoplay controls></audio>
+<button type="button" id="button1">按钮</button>
+<script>
+  var oDiv = document.getElementById("div1");
+  var oButton = document.getElementById("button1");
+
+//  oButton.onclick= function () {
+//      console.log("11");
+//      oDiv.classList.toggle("aa");
+//  }
+  oButton.addEventListener("click",function () {
+      console.log("11");
+  })
+</script>
+</body>
+</html>

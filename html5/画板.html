@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    #draw{
+      background: #000000;
+    }
+  </style>
+</head>
+<body>
+  <canvas width="400" height="400" id="draw"></canvas>
+  <script>
+    var oDiv = document.querySelector("#draw");
+    var draw = oDiv.getContext("2d");
+    oDiv.onmousedown = function (e) {
+        draw.beginPath();
+        draw.moveTo(e.clientX,e.clientY);
+        oDiv.onmousemove = function (e) {
+            draw.lineTo(e.clientX,e.clientY);
+            draw.strokeStyle = "#ffffff";
+            draw.stroke();
+        }
+        oDiv.onmouseup = function () {
+            oDiv.onmousemove = null;
+        }
+    }
+  </script>
+</body>
+</html>

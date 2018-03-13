@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    #sec{
+      stroke-dashoffset: 0;
+      stroke-dasharray: 628;
+      transition: all 1s linear;
+      transform: rotate(-90deg);
+      transform-origin: 120px 120px;
+    }
+  </style>
+</head>
+<body>
+<div class="box">
+  <svg height="400" width="400" style="background: #dddddd">
+    <circle cx="120" cy="120" r="100" stroke="#43AEFA" stroke-width="20" fill="#fff" />
+    <circle id="sec" cx="120" cy="120" r="100" stroke="#F4F1F1" stroke-width="20" fill="transparent" />
+  </svg>
+  <div id="count">10</div>
+</div>
+
+  <script>
+    var oCir = document.querySelector("#sec");
+    var oCount = document.querySelector("#count");
+    var t = 10;
+    var onece = 628/10;
+    var timer = setInterval(function () {
+        oCount.innerHTML = t;
+      t--;
+      if(t<0){
+          clearInterval(timer);
+      }else{
+          oCir.style.strokeDashoffset = onece*t-628;
+
+      }
+
+    },1000)
+  </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <div class="div1" id="box1">
+    <div class="div2">1</div>
+    <div class="div2">2</div>
+  </div>
+  <script>
+    var oDiv = document.getElementById("box1");
+    var aDiv = document.getElementsByClassName("div2");
+    var tarName = document.getElementsByTagName("div");
+
+    var queryDom = document.querySelectorAll(".div2");
+//    console.log(queryDom);
+//
+//
+//    console.log(tarName);
+//    console.log(aDiv);
+//    console.log(oDiv);
+    console.log(oDiv.children);
+    console.log(oDiv.childNodes);
+  </script>
+</body>
+</html>
