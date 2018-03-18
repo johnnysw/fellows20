@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    ul{
+      list-style: none;
+    }
+    ul li{
+      float: left;
+    }
+    .slider-box{
+      position: relative;
+      width: 520px;
+      height: 280px;
+    }
+    .slider-img li{
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: none;
+    }
+    .slider-nav{
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+    }
+    .slider-nav li,.slider-btn li{
+      height: 20px;
+      width: 20px;
+      background-color: black;
+      color: #ffffff;
+      margin-left: 10px;
+      line-height: 20px;
+      text-align: center;
+    }
+    .slider-btn{
+      position: absolute;
+      left: 10px;
+      bottom: 10px;
+    }
+    .slider-img .active{
+      display: block;
+    }
+    .slider-nav .active{
+      background-color: #ff6600;
+    }
+  </style>
+</head>
+<body>
+
+<div id="div1"></div>
+<div id="div2"></div>
+<script src="js/jquery-3.3.1.js"></script>
+<script src="js/require.js" data-main="js/main"></script>
+<script>
+
+
+</script>
+</body>
+</html>
