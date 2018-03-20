@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>regular expression</title>
+</head>
+<body>
+<script>
+//  var str = "abcdefg";
+//  var reg = /de/;
+//  var reg1 = new RegExp("de");
+//  console.log(reg1.test(str));
+//  console.log(reg1.exec(str));
+
+//  function reg3(strReg,str) {
+//      var reg = new RegExp(strReg); //不可使用 var reg = /strReg/
+//      console.log(reg.test(str));
+//  }
+//  reg3("de","abcdef");
+
+
+//  var str = "aa bb cc";
+//  var reg = /\bbb/;
+//  console.log(reg.test(str));
+
+//  var str = "babc\nbdbeb";
+//  var reg = /^b/gm;
+//  console.log(str.replace(reg,"x"));
+//  console.log(reg.exec(str));
+//  console.log(str.match(reg));
+//  console.log(str.search(reg));
+
+
+//30CAC0040 取出40
+//3SFASDF92 取出92
+//  var str = "3SFASDF0092";
+//  var reg = /\d+$/;
+//  console.log(reg.exec(str));
+
+//例如:蓝  色  理 想
+//变成:蓝 色 理 想
+//  var str = "蓝  色  理 想";
+//  var reg = /\s+/g;
+//  console.log(str.replace(reg," "));
+
+//判断字符串是不是由数字组成
+//var str = "4534a5345";
+//var reg = /^\d+\d$/
+//  console.log(reg.test(str));
+
+//正则验证手机号，忽略前面的0，支持130-139，150-159。忽略前面0之后判断它是11位的。
+//  var str = "13588888888";
+//  var reg = /^0*(13|15)\d{9}$/;
+//  console.log(reg.test(str));
+
+  //去掉前后空格
+  var str ="   aa b  ";
+  var reg = /^\s+|\s+$/g;
+  console.log(str.replace(reg,""));
+</script>
+</body>
+</html>

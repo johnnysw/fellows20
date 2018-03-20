@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<input type="text" id="inp">
+<button id="btn">提交</button>
+<body>
+<script>
+  var oInp = document.getElementById("inp");
+  var oBtn = document.getElementById("btn");
+  oBtn.onclick = function () {
+      var str = oInp.value;
+      var reg = /^0*(13|15)\d{9}$/
+      console.log(reg.test(str));
+
+  }
+// var str = "abc";
+// var reg = /b/;
+// var reg1 = new RegExp("c");
+// console.log(reg1.exec(str));
+
+// var reg = /c{3}/;
+// var str='caicccniao';
+//
+//console.log(reg.exec(str));
+
+//var reg = /^b|c.+/;
+//var str='cainiao';
+//console.log(reg.exec(str));
+
+//var reg =/\s.+/;
+//var str='This is a test String.';
+
+
+//var reg = /(\w)(\w)/;
+//var str='blueidea';
+
+//reg = /(\w)(\w)\2\1/;
+//str='woow';
+
+//var reg = /^(?:b|c).+/;
+//var str='bbs.blueidea.com';
+
+//var reg = /cainiao(?=8)/;
+//var str='cainiao8';
+
+//var reg = /^b/m;
+//var str = 'ac\nbd';
+
+//var reg = /e/;
+//var str = 'abdebcbf';
+//
+//console.log(str.search(reg));
+//
+//console.log(str.replace(reg,"x"));
+
+//30CAC0040 取出40
+//3SFASDF93 取出93
+//  var str = "3SFASDF98993";
+//  var reg = /\d+$/;
+//  console.log(reg.exec(str));
+
+//例如:蓝  色  理      想
+//变成:蓝 色 理 想
+//  var str = "蓝  色  理  想";
+//  var reg =/\s+/g;
+//  console.log(str.replace(reg," "));
+
+  //匹配手机号忽略前面的0，支持130-139，150-159
+//  var str = "13533333333";
+//  var reg = /^0*(13|15)\d{9}$/
+//  console.log(reg.test(str));
+</script>
+</body>
+</html>
