@@ -1,0 +1,114 @@
+@charset "UTF-8";
+.div1 {
+  color: #ccc;
+}
+.div1 .div4 {
+  margin: 0;
+  padding: 0;
+}
+.div1:hover {
+  color: #ccc;
+}
+.div1-aa {
+  background: #000;
+}
+
+.div3 {
+  background-img: url("img/1.jpg");
+  background-color: red;
+}
+
+/*单行注释*/
+/*! 强制注释*/
+.div5, .div6 {
+  width: 700px;
+  height: 800px;
+}
+
+.div6 {
+  font-size: 19px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.div7 {
+  background-img: url("img/1.jpg");
+}
+
+.div7 {
+  color: rgba(255, 0, 0, 0.5);
+}
+
+.div8 {
+  width: 100px;
+}
+
+/*这是一个 注释 */
+.div9 {
+  width: 100px;
+}
+
+.div-for1 {
+  width: 1px;
+}
+
+.div-for2 {
+  width: 2px;
+}
+
+.div-if3 {
+  margin: 0;
+}
+
+.div-for4 {
+  width: 4px;
+}
+
+.div-for5 {
+  width: 5px;
+}
+
+.div-one {
+  width: 10px;
+}
+
+.div-two {
+  width: 10px;
+}
+
+.div-three {
+  width: 10px;
+}
+
+.div-four {
+  width: 10px;
+}
+
+.box-5 {
+  width: 10px;
+}
+
+.box-4 {
+  width: 10px;
+}
+
+.box-3 {
+  width: 10px;
+}
+
+.box-2 {
+  width: 10px;
+}
+
+.box-1 {
+  width: 10px;
+}
+
+.div10 {
+  width: 10px;
+}
+
+/*# sourceMappingURL=index.css.map */

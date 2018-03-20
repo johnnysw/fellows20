@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,CAAC;EACC,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC",
+"sources": ["../style/imp.scss"],
+"names": [],
+"file": "imp.css"
+}

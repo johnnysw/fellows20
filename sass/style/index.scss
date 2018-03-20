@@ -1,0 +1,93 @@
+$first:#ccc;
+.div1 {
+  color: $first;
+  .div4 {
+    margin: 0;
+    padding: 0;
+  }
+  &:hover{
+    color: $first;
+  }
+  &-aa{
+    background: #000;
+  }
+}
+.div3{
+  background: {
+    img: url('img/1.jpg');
+    color: red;
+  };
+}
+/*单行注释*/
+//单行注释
+/*! 强制注释*/
+@mixin aa($h:500px,$w:600px){
+  width: $w;
+  height: $h;
+}
+.div5{
+  @include aa($w:700px,$h:800px);
+}
+.div6{
+  @extend .div5;
+  font-size: 19px;
+}
+@import "imp";
+$img:'1.jpg';
+.div7{
+  background-img:url("img/" + $img);
+}
+$color:rgb(255,0,0);
+$color1:rgba(255,0,0,0.8);
+.div7{
+  color: transparentize($color,.5);
+}
+$title:width;
+.div8{
+  #{$title}:100px;
+}
+$zs:"注释";
+/*这是一个 #{$zs} */
+$sel:'.div9';
+#{$sel}{
+  width: 100px;
+}
+
+@for $i from 1 through 5{
+  @if($i==3){
+    .div-if3{
+      margin: 0;
+    }
+  }@else{
+    .div-for#{$i}{
+      width: $i+px;
+    }
+  }
+
+}
+$list8:(one two three four);
+@each $var in $list8{
+  .div-#{$var}{
+    width: 10px;
+  }
+}
+$x:5;
+@while $x>0 {
+  .box-#{$x}{
+    width: 10px;
+  }
+  $x:$x - 1;
+}
+
+@function foo($key){
+  @if(type-of($key)== string){
+  @warn '您输入的类型不正确！';
+    @return 10px;
+}@else{
+    @return $key+px;
+  }
+
+}
+.div10{
+  width:foo("3");
+}

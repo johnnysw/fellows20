@@ -1,0 +1,115 @@
+@charset "UTF-8";
+#div1 {
+  background-color: #00ff00;
+  color: #00ff00;
+  font-width: bolder;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.div3 {
+  color: #00ff00;
+}
+
+.ddd {
+  font-size: 14px;
+}
+
+.div5, .div6 {
+  width: 400px;
+  height: 300px;
+  font-size: 13px;
+}
+
+.div6 {
+  margin: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.div11 {
+  background-image: url("img/3.jpg");
+}
+
+.div12 {
+  color: rgba(255, 0, 0, 0.8);
+}
+
+.div13 {
+  font-size: 6px;
+}
+
+/*这是一个注释*/
+.div14 {
+  width: 100px;
+}
+
+div15 {
+  width: 20px;
+}
+
+.div1 {
+  margin: 1px;
+}
+
+.div2 {
+  margin: 2px;
+}
+
+.div3 {
+  font-size: 3px;
+}
+
+.div4 {
+  margin: 4px;
+}
+
+.div5, .div6 {
+  margin: 5px;
+}
+
+.div6 {
+  margin: 6px;
+}
+
+.div-aa {
+  width: 10px;
+}
+
+.div-bb {
+  width: 10px;
+}
+
+.div-cc {
+  width: 10px;
+}
+
+.while-5 {
+  width: 100px;
+}
+
+.while-4 {
+  width: 100px;
+}
+
+.while-3 {
+  width: 100px;
+}
+
+.while-2 {
+  width: 100px;
+}
+
+.while-1 {
+  width: 100px;
+}
+
+.div16 {
+  width: 30px;
+}
+
+/*# sourceMappingURL=test.css.map */
