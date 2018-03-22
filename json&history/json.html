@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+//var user = {
+//    name:"xiaoming",
+//    age:"17",
+//    school:"heida"
+//};
+//var str = JSON.stringify(user);
+//console.log(str);
+//var obj = eval();
+//var obj = JSON.parse(str);
+//console.log(obj);
+
+
+//小明今年17岁，来自广州，兴趣是看电影和旅游，他有两个姐姐，
+// 一个叫小芬，今年24岁，职业是护士。
+// 还有一个叫小芳，今年23岁，是一名老师。
+//  var user = {
+//      name:"xiaoming",
+//      age:"17",
+//      home:"广州",
+//      hobby:["film","旅游"],
+//      sister:{
+//          sister1:{
+//              name:"小芬",
+//              age:"24",
+//              jog:"nurse"
+//          },
+//          sister2:{
+//              name:"xioafang",
+//              age:"23",
+//              job:"teacher"
+//          }
+//      }
+//  }
+//  JSON.stringify(user);
+
+//  var a = 5;
+//  var b = a;
+//  a=3;
+//
+//  console.log(b);
+//
+//  var obj = {
+//      name:"xiaohong",
+//      age:"17"
+//  };
+//  obj.name = "xiaoming";
+//  var obj1 =obj;
+//  console.log(obj1);
+//  var obj1 = {};
+//  obj1.name = obj.name;
+//  obj1.age = obj.age;
+//
+//  obj.name = "xiaoming";
+//
+//  console.log(obj1);
+//
+//  console.log(obj);
+
+var obj = {
+      name:"xiaohong",
+      age:"17",
+      school:"heida",
+      sister:{
+          sister1:{
+              name:"xiaofeng",
+              age:"19"
+          }
+      }
+  };
+//var obj1={};
+function clone(obj) {//对象深克隆
+    var obj1 ={};
+    for( var a in obj ){
+        if(typeof obj[a]=="object"){
+            obj1[a] = clone(obj[a]);
+        }else{
+            obj1[a]=obj[a];
+        }
+    }
+  return obj1;
+}
+
+
+//var obj3 = clone(obj)
+////clone(obj);
+//obj.name = "xiaoming";
+//obj.sister.sister1.name="小芳";
+//console.log(obj3);
+
+var obj4={
+    name:"aa",
+    age:"17",
+    school:"heida"
+}
+var obj5=JSON.stringify(obj4);
+
+obj4.name = "bb";
+
+console.log(JSON.parse(obj5));
+
+
+</script>
+
+</body>
+</html>
