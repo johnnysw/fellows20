@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    header,nav,footer{
+      height: 100px;
+      background-color: #8c8c8c;
+      max-width: 960px;
+      width:100%;
+      margin: 10px auto;
+      text-align: center;
+      line-height: 100px;
+    }
+    article{
+      max-width: 960px;
+      width:100%;
+      margin: 0 auto;
+    }
+    .img{
+      width: 100%;
+      max-width: 960px;
+      padding-bottom: 56.25%;
+      background: url("img/01.jpg") no-repeat center/cover;
+    }
+    section{
+      height: 300px;
+      float: left;
+      text-align: center;
+      display: table;
+    }
+    p{
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    .right{
+      background-color: #ff6600;
+      width: 25%;
+      margin-left: 5%;
+    }
+    .left{
+
+      width: 70%;
+      background: #00aaee;
+    }
+    .clearfix:after{
+      content: "";
+      display: block;
+      clear: both;
+    }
+    @media (max-width: 600px) {
+     .clearfix section{
+        width: 100%;
+        margin: 10px 0 0 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>页头</header>
+  <nav>导航</nav>
+  <article>
+    <div class="img"></div>
+  </article>
+  <article class="clearfix">
+    <section class="left">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sem erat, egestas quis luctus ut, rhoncus vitae risus. Integer venenatis libero sit amet sapien dictum, quis bibendum mi volutpat. Cras pretium quam quis magna facilisis, eget feugiat nisi lacinia.</p>
+    </section>
+    <section class="right">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sem erat, egestas quis luctus ut, rhoncus vitae risus. Integer venenatis libero sit amet sapien dictum, quis bibendum mi volutpat. Cras pretium quam quis magna facilisis, eget feugiat nisi lacinia.</p>
+    </section>
+  </article>
+<footer>
+  页脚
+</footer>
+</body>
+</html>
