@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    #div{
+      width: 100px;
+      height: 100px;
+      background-color: #00aaee;
+    }
+    @media (orientation: landscape) {/*横屏*/
+      #div{
+        background-color: #FF0000;
+      }
+    }
+    @media (orientation: portrait) {/*竖屏*/
+      #div{
+        background-color: #00ff00;
+      }
+    }
+  </style>
+</head>
+<body>
+<div id="div"></div>
+</body>
+</html>
