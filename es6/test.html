@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const a={
+        //     name:"xiaoming",
+        //     age:"15"
+        // }
+        // const b={
+        //     name:"dddd",
+        //     age:"12"
+        // }
+        // console.log(a);
+        // a=b
+        // console.log(a);
+        // const b="4";
+        // b="3";
+        // console.log(b);
+        function a(){
+            console.log(this);
+            
+            var str = "4";
+            var b = function(){
+                console.log(this);
+                
+                function c(){
+                    console.log(this);
+                }
+                c();
+            }
+            b();
+        }
+        a();
+//         function f1(){
+
+// 　　　　var n=999;
+
+// 　　　　nAdd=function(){n+=1}
+
+// 　　　　function f2(){
+// 　　　　　　alert(n);
+// 　　　　}
+
+// 　　　　return f2;
+
+// 　　}
+
+// 　　var result=f1();
+
+// 　　result(); // 999
+
+// 　　result(); // 1000
+// function a(){
+//     str = "aaa";
+// }
+// // console.log(str);
+// a();
+// console.log(str);
+
+    </script>
+</body>
+</html>
