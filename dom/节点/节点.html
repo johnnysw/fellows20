@@ -38,26 +38,26 @@
 
   <script>
     var oBox = document.getElementById("box2");
-    var aSpan = document.getElementsByTagName("span")[1];
-    var span2=aSpan.previousElementSibling;//兼容性
-   // console.log(span2);
+    var aSpan = document.getElementsByTagName("span")[0];
+    var span2=aSpan.nextElementSibling;//兼容性
+   console.log(span2);
 
 
     var fir = oBox.children.item(1);//兼容性
-    console.log(fir);
-//    var span2 = next(aSpan);
-//
-//    function next(obj) {
-//      var nextNode = obj;
-//      do{
-//          nextNode = nextNode.nextSibling;
-//          console.log(nextNode);
-//      }while ( nextNode && nextNode.nodeType!=1);
-//      return nextNode;
-//    }
-//
-//    console.log(span2);
+    // console.log(fir);
+   
+   function next(obj) {
+     var nextNode = obj;
+     do{
+         nextNode = nextNode.nextSibling;
+        //  console.log(nextNode);
+     }while ( nextNode && nextNode.nodeType!=1);
+     return nextNode;
+   }
 
+  //  console.log(span2);
+  var span2 = next(aSpan);
+      console.log(span2);
 
 
 
