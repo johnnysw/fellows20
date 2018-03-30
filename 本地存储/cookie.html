@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  function setCookie(name,value,expires) {
+    var str = name+"="+value;
+    var timer = new Date();
+    timer.setDate(timer.getDate()+expires);
+    str+=";expires="+timer.toUTCString();
+    document.cookie = str;
+  }
+  function getCookie(name) {
+    var arr1 = document.cookie.split(";");
+    for(var i=0;i<arr1.length;i++){
+        var temp= arr1[i].split("=");
+        if(temp[0].trim()==name){
+            return temp[1];
+        }
+    }
+  }
+  function delCookie(name) {
+    var timer = new Date();
+    timer.setDate(timer.getDate()-1);
+    document.cookie = name +"= ;expires="+timer.toUTCString();
+  }
+//  setCookie("name","zhangsan",10);
+//  setCookie("age","18",10);
+  //delCookie("age");
+//  console.log(getCookie("age"));
+
+</script>
+</body>
+</html>

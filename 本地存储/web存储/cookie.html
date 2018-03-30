@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  var timer = new Date();
+  var timer1 = new Date();
+  timer1.setDate(timer1.getDate()-1);
+  timer.setDate(timer.getDate()+10);
+//  console.log("expires="+timer);
+  document.cookie = "name=xiaoming;expires="+timer.toUTCString();
+  document.cookie = "age=18;expires="+timer.toUTCString();
+  document.cookie = "school=heida;expires="+timer.toUTCString();
+//  document.cookie = "age=null;expires="+timer1.toUTCString();
+  console.log(document.cookie);
+
+  function getCookie(key) {
+      var arr = document.cookie.split(";");
+      for(var i=0;i<arr.length;i++){
+          if(arr[i].split("=")[0].trim()==key){
+              return arr[i].split("=")[1];
+          }
+      }
+
+  }
+  function setCookie(key,value,expires) {
+      var timer = new Date();
+      timer.setDate(timer.getDate()+expires);
+      document.cookie = key+"="+value+";expires="+timer.toUTCString();
+  }
+  function delCookie(key) {
+      var timer = new Date();
+      timer.setDate(timer.getDate()-1);
+      document.cookie = key+"=null;expires="+timer.toUTCString();
+  }
+  setCookie("home","haerbin",5);
+  console.log(getCookie("home"));
+  delCookie("home");
+  console.log(getCookie("home"));
+</script>
+</body>
+</html>
