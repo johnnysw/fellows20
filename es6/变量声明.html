@@ -40,18 +40,15 @@
         // var oStr =  foo();
         // console.log(oStr);
         
-        // var Oul = document.getElementById("oul");
-        // var ali = document.getElementsByTagName("li");
-        // var i
-        // for(i = 0;i<ali.length;i++){
-        //     (function(key){
-        //         // console.log(key);
-        //         ali[key].onclick = function(){
-        //             console.log(key);
-        //         }
-        //     })(i)
-            
-        // }
+        var Oul = document.getElementById("oul");
+        var ali = document.getElementsByTagName("li");
+        var i
+        for(let i = 0;i<ali.length;i++){
+            // console.log(key);
+            ali[i].onclick = function(){
+                console.log(i);
+            }
+        }
 
     //     function fun1(){
     //         var a="123";
@@ -118,13 +115,21 @@
         // a="3";
         // console.log(b);
         
-        const obj={
-            name:"xiaoming",
-            age:"17"
+        // const obj={
+        //     name:"xiaoming",
+        //     age:"17"
+        // }
+        // Object.freeze(obj);
+        // obj.name="aaaa";
+        // console.log(obj);
+        var  b = 1;
+        var  a = [1,4,5];
+        var c = [3,5,6];
+        for (var i=0;i<c.length;i++){
+            a[i] =c[i];
         }
-        Object.freeze(obj);
-        obj.name="aaaa";
-        console.log(obj);
+        c[1]=10;
+        console.log(a);
         
         
     </script>

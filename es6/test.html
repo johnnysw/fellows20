@@ -24,9 +24,11 @@
         // console.log(b);
         function a(){
             console.log(this);
-            
+            var a = 0 
             var str = "4";
             var b = function(){
+                console.log(a,str);
+                
                 console.log(this);
                 
                 function c(){
@@ -63,6 +65,45 @@
 // a();
 // console.log(str);
 
+        // for(var i=0;i<10;i++){
+
+        // }
+        
+        //  if(true){
+        //      let a = 10;
+        //  }
+        //  console.log(a);
+        // 闭包
+
+//         var name = "The Window";
+
+// 　　    var object = {
+//     　　　　name : "My Object",
+//     　　　　getNameFunc : function(){
+//              console.log(this);
+//              var This = this;
+//     　　　　　　return function(){
+//                 console.log(This);
+                
+//                // console.log(this);
+//     　　　　　　　　return This.name;
+//     　　　　　　};
+
+//     　　　　}
+
+//     　　};
+
+// console.log(object.getNameFunc()());
+
+// function foo(){
+//     console.log(this);
+    
+// }
+//   foo();  
+   
+setTimeout(function(){
+    console.log(this);
+},100);  
     </script>
 </body>
 </html>

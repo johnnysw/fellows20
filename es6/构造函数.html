@@ -8,21 +8,16 @@
 </head>
 <body>
     <script>
-        var i = 5;
-        console.log(i.toString(2));
-        var j = 101;
-        console.log(parseInt(j,2));
-        var k = 0B101;
-        console.log(k);
-        var z = 0xf;
-        console.log(z);
-        
-        var x = "5.1";
-        console.log(Number.parseInt(x));
-        
-        
-        
+        function Dilaog(){
+            this.name="aaa";
+            this.age = "17"
+        }
 
+        var dia = new Dilaog();
+       console.log(Dilaog.prototype);
+        
+         console.log(dia.__proto__);
+        
     </script>
 </body>
 </html>
