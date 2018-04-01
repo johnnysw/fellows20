@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let arr = new Set([1,2,3,4,5,6]);
+        // arr.add(10);
+        // arr.delete(6);
+        // arr.clear();
+        // console.log(arr);
+
+        // let arr2 = [11,22,33,44,22];
+
+        // let arr3 =Array.from( new Set(arr2));
+        //console.log(arr3);
+
+        // let arr = new Set([1,9,3,4,5,6]);
+        // for(let [index,vale] of arr.entries()){
+        //     console.log(index,vale);
+        // }
+        
+        let arr = new WeakSet();
+        let arr2 = [1,2,34,5];
+        let obj = {
+            name:"xiaoming",
+            age:"15",
+        }
+        let obj2 = obj;
+        arr.add(obj2);
+        arr.add(obj);
+        arr.add(arr2);
+        console.log(arr);
+        
+        
+    </script>
+</body>
+</html>

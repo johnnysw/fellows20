@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //     let obj = new Proxy({
+    //         name:"xiaoming",
+
+    //     },{
+    //         get:function(target,key,property){
+    //             console.log("get:"+key);
+                
+    //         },
+    //         set:function(target,key,value,receiver){
+    //             console.log("set:"+key,value.receiver);
+    //         }
+    //     }
+        
+    // ) 
+    // obj.name = "aaa"
+    // obj.name;
+    let target = function(){
+            return 'target'
+        };
+
+        let handler = {
+            apply(target, ctx, args){
+                console.log('调用了apply方法');
+                return Reflect.apply(...arguments);
+            }
+        };
+
+        let proxy = new Proxy(target, handler);
+        console.log( proxy());
+    </script>
+</body>
+</html>

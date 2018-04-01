@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<div id="myDiv"></div>
+<body>
+    <script src="./jquery-3.3.1.js"></script>
+    <script>
+    // var xmlhttp;
+    // if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
+    //     xmlhttp=new XMLHttpRequest();
+    // }else{// code for IE6, IE5
+    //     xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    // }    
+    // //
+    // xmlhttp.open("GET","test.json?" + Math.random(),true);
+    // xmlhttp.send();
+    // //
+    // xmlhttp.onreadystatechange=function()
+    // {
+    // if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    //     {
+    //     document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+    //     }
+    // }
+    // $.get("test.json",{},function(res){
+    //     console.log(res);
+    // },'json');
+
+    // let apro = new Promise(function(resolve,reject) {
+    //     setTimeout(() => {
+    //         reject();
+    //     }, 2000);
+    // }).then(function(){
+    //     console.log("come");
+        
+    // }).catch(function() {
+    //     console.log("wrong")
+    // });
+
+    // function* foo(){
+    //     yield console.log("1");
+    //     yield console.log("2");
+    //     yield console.log("3");
+    // }
+    // var a = foo();
+    // a.next();
+    // a.next();
+    // a.next();
+    // a.next();
+    // function request(url){
+    //     $.get(url,{},function(ref){
+    //         console.log(ref);
+    //         runAjax.next();
+    //     },'json')
+    // }
+    // function* foo(){
+    //     yield (request('a.json'));
+    //     yield (request('b.json'));
+    //     yield (request('c.json'));
+    // }
+    // var runAjax = foo();
+    // runAjax.next();
+
+//     function* foo(x) {
+//         var y = 2 * (yield (x + 1));
+//         var z = yield (y / 3);
+//         return (x + y + z);
+//     }
+
+//     var a = foo(5);
+//    console.log(a.next() );
+//    console.log(a.next() );
+//    console.log(a.next() );
+    // a.next() // Object{value:6, done:false}
+    // a.next() // Object{value:NaN, done:false}
+    // a.next() // Object{value:NaN, done:true}
+    
+// var b = foo(5);
+// b.next() // { value:6, done:false }
+// b.next(12) // { value:8, done:false }
+// b.next(13) // { value:42, done:true }
+
+
+// let proxy = new Proxy({
+//             name: 'zs',
+//             age: 18
+//         }, {
+//             get(target, key, property){
+//                 console.log('调用了get方法');
+//                 return target[key];
+//             },
+//             set(target, key, value, receiver){
+//                 console.log('调用了set方法');
+//                 return target[key] = value;
+//             }
+//         });
+
+//         console.log(proxy.name);
+//         proxy.name = 'ls';
+//         console.log(proxy.name); 
+
+ let target = function(){
+            return 'target'
+        };
+
+        let handler = {
+            apply(target, ctx, args){
+                console.log('调用了apply方法');
+                return Reflect.apply(...arguments);
+            }
+        };
+
+        let proxy = new Proxy(target, handler);
+        console.log( proxy());
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function Person(name,age){
+        //     this.name = name;
+        //     this.age = age
+        // } 
+        // Person.prototype.showInfo = function(){
+        //     console.log("姓名："+this.name+"年龄："+this.age);
+        // }
+
+        // let teacher = new Person("Mr.li","30");
+        // teacher.showInfo();
+        // //
+        // function Student(name,age,school) {
+        //     Person.call(this,name,age);
+        //     this.school = school;
+        // }
+        // Student.prototype = new Person();
+        // Student.prototype.showSchool = function(){
+        //     console.log(this.school);
+            
+        // }
+        // Student.prototype.constructor = Student;
+        // console.log(Student.prototype.constructor);
+
+        // let student2 = new Student("xiaoming","15","heida");
+        // student2.showInfo();
+        // student2.showSchool();
+
+        class Person{
+            constructor(name,age){
+                this.name = name;
+                this.age = age;
+            }
+            showInfo(){
+                console.log("姓名："+this.name+"年龄："+this.age);
+            }
+        }
+        let xiaoming = new Person("xiaoming","17");
+        xiaoming.showInfo();
+
+        class Teacher extends Person{
+            constructor(name,age,school){
+                super(name,age);
+                this.school = school;
+            }
+            showSchool(){
+                console.log(this.school);
+            }
+
+        }
+        let xiaohong = new Teacher("xiaohong","24","heida");
+        xiaohong.showSchool();
+ 
+
+
+
+    </script>
+</body>
+</html>

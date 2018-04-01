@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="./jquery-3.3.1.js"></script>
+    <script>
+        // function* foo(){
+        //     yield 1;
+        //     yield 2;
+        //     return 3;
+        // }    
+        // let a = foo();
+        // console.log(a.next());
+        // console.log(a.next());
+        // console.log(a.next());
+
+    // function* foo(x) {
+    //     var y = 2 * (yield (x + 1));
+    //     var z = yield (y / 3);
+    //     return (x + y + z);
+    // }
+
+    // var a = foo(5);
+    // console.log(a.next() );
+    // console.log(a.next(12) );
+    // console.log(a.next(13) );
+
+
+
+
+
+
+//     a.next() // Object{value:6, done:false}
+//     a.next() // Object{value:NaN, done:false}
+//     a.next() // Object{value:NaN, done:true}
+    
+// var b = foo(5);
+// b.next() // { value:6, done:false }
+// b.next(12) // { value:8, done:false }
+// b.next(13) // { value:42, done:true }
+
+function runAjax(url){
+    $.get(url,function(ref){
+        console.log(ref);
+        a.next();
+    })
+}
+
+function* foo(){
+    yield runAjax('a.json');
+    yield runAjax('b.json');
+    return runAjax('c.json');
+}
+let a = foo();
+a.next();
+         
+    </script>
+</body>
+</html>
