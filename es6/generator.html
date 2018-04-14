@@ -44,17 +44,17 @@
 // b.next(12) // { value:8, done:false }
 // b.next(13) // { value:42, done:true }
 
-function runAjax(url){
+function runAjax(url,str = "null"){
     $.get(url,function(ref){
-        console.log(ref);
-        a.next();
+        console.log(ref.name+"+"+str);
+        a.next(ref.name);
     })
 }
 
 function* foo(){
-    yield runAjax('a.json');
-    yield runAjax('b.json');
-    return runAjax('c.json');
+    x=yield runAjax('a.json');
+    y=yield runAjax('b.json',x);
+    return runAjax('c.json',y);
 }
 let a = foo();
 a.next();

@@ -5,24 +5,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        ul{
+            list-style: none;
+        }
+        .box{
+            height: 500px;
+            width: 500px;
+            margin: 20px auto;
+            border:1px solid #000;
+
+        }
+        #title{
+            background-color: black;
+            color: #fff;
+        }
+        #title ul li{
+            float: left;
+            padding:5px 10px
+        }
+        #title .active{
+            background: #fff;
+            color: #000;
+        }
+        #content{
+            background-color: #fff;
+        }
+        .clearfix::after{
+            content:"";
+            display: block;
+            clear: both;
+        }
+        #content li {
+            display: none
+        }
+        #content .active{
+            display: block;
+        }
+    </style>
 </head>
 <body>
-    <script>
-        var i = 5;
-        console.log(i.toString(2));
-        var j = 101;
-        console.log(parseInt(j,2));
-        var k = 0B101;
-        console.log(k);
-        var z = 0xf;
-        console.log(z);
-        
-        var x = "5.1";
-        console.log(Number.parseInt(x));
-        
-        
-        
+    <div class="box">
+        <div id="title">
+                <ul class="clearfix">
+                    <li class="active">前端基础</li>
+                    <li>前端简介</li>
+                    <li>前端高级</li>
+                </ul>
+        </div>
+        <div id="content">
+                <ul>
+                    <li class="active" style="color:red">前端基础内容</li>
+                    <li style="color:blue">前端简介内容</li>
+                    <li style="color:green">前端高级内容</li>
+                </ul>
+        </div>
+    </div>
 
+
+    <div id="box1" style="margin:0 auto;width:100px;height:100px;background-color:red">
+        <div id="box2" style="width:50px;height:50px;background-color:green"></div>
+    </div>
+
+    <input type="text" id="inp">
+    <script>
+        var aTitle = document.getElementById("title").getElementsByTagName("li");
+        var aContent = document.getElementById("content").getElementsByTagName("li");
+        for(var i = 0;i<aTitle.length;i++){
+            aTitle[i].index = i;
+            aTitle[i].onmouseover = function(){
+                for(var j = 0;j<aTitle.length;j++){
+                    aTitle[j].className = "";
+                    aContent[j].className = "";
+                }
+                this.className = "active";
+                aContent[this.index].className = "active";
+            }
+        }
+
+        
+        var oBox1 = document.getElementById("box1");
+        var oBox2 = document.getElementById("box2");  
+        oBox1.addEventListener("click",function(){
+            console.log("1");
+        },false);
+        
+        oBox2.addEventListener("click",function(e){
+            console.log("2");
+            //e.stopPropagation();
+        },false);
+
+
+        var oInp = document.getElementById("inp");
+        oInp.onkeydown = function(e){
+            console.log(this.value);
+            //if(e.keyCode ==79 && e.altKey){
+               // console.log("您按下了组合键！");
+                
+           // }
+        }
     </script>
 </body>
 </html>

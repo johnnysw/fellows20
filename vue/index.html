@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+    <div id="app">
+        {{ message }}
+        <ul>
+            <li v-for="(sc,index) in school">{{ sc }}-{{ index }}</li>
+        </ul>
+        <ul>
+            <li v-for="i in arr2">{{i}}</li>
+        </ul>
+    </div>
+<body>
+        <script src="./vue.js"></script>
+    <script>
+            var vm = new Vue({
+                el: '#app',
+                data: {
+                    message: 'Hello Vue!',
+                    school:['heida','linda','ligong'],
+                    arr:[2,4,6,3,9,7]
+                },
+                computed: {
+                    arr2(){
+                        return this.arr.sort(function(a,b){
+                            return b - a;
+                        })
+                    }
+                }
+            })
+       
+        
+        
+     </script> 
+     
+</body>
+</html>

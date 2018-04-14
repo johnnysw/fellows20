@@ -1,0 +1,23 @@
+h1{
+    color:red;
+    background-image: url('../images/niu.png');
+    transform: rotate(30deg);
+    display: flex;
+    font-size: 10px;
+    border:1px solid #ddd;
+}
+table{
+    color: red;
+    font-size: 12px;
+    
+}
+h1{
+    border: 1px solid red;
+}
+.aaa{
+    color: red;
+}
+div{
+    color: red;
+    font-size: 23px;
+}
