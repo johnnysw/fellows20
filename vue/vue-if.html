@@ -4,21 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>vue</title>
+    <title>Document</title>
 </head>
 <body>
-    <div id="app">
-        {{msg}}
+    <div id ="app">
+        <div v-if="testif == 'a'">a</div>
+        <div v-else-if="testif == 'b'">b</div>  
+        <div v-else>c</div>
+
+        <div v-show="false">v-show</div>
     </div>
     <script src="vue.js"></script>
     <script>
-        var vm = new Vue({
-            el:"#app",
+        let vm = new Vue({
+            el :"#app",
             data:{
-                msg:'hello word'
+                testif:"a"
             }
-        })
-        console.log(vm);
+        });
     </script>
 </body>
 </html>

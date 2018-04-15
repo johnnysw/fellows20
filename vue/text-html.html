@@ -4,21 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>vue</title>
+    <title>Document</title>
 </head>
 <body>
     <div id="app">
-        {{msg}}
+        <div v-text="vtext"></div>
+        <div v-html='vHtml'></div>
     </div>
     <script src="vue.js"></script>
     <script>
-        var vm = new Vue({
-            el:"#app",
-            data:{
-                msg:'hello word'
+        let vm = new Vue({
+            el:'#app',
+            data :{
+                vtext:"hello",
+                vHtml:"<h3>world</h3>"
             }
         })
-        console.log(vm);
     </script>
 </body>
 </html>

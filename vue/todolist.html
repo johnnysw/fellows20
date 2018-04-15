@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        table tr td,table tr th{
+            border:1px solid #dddddd
+        }
+        table tr.active{
+            background: #cccccc;
+        }
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+            <div v-cloak>
+                    {{ message }}
+                  </div>
+        <input type="text" v-model = "addInfo">
+        <input type="number" v-model = "addTime">
+        <button @click = "addList">添加</button>
+        <table>
+            <tr>
+                <th>选择</th>
+                <th>待办事项</th>
+                <th>待办用时</th>
+                <th>操作</th>
+            </tr>
+            <tr :class="{active:val.isActive}" v-for="(val,index) in infoList" @click = "listClick(val)">
+                <td><input type="checkbox" v-model="checkedList" :value="index"></td>
+                <td>{{ val.info }}</td>
+                <td>{{ val.time }}</td>
+                <td><button @click="delList(index)">删除</button></td>
+            </tr>
+            <tr><td><button @click="delChecked">删除选中</button></td><td>总用时：</td><td colspan="2">{{ csum }}</td></tr>
+        </table>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:"#app",
+            data:{
+                msg:'hello word',
+                infoList:[
+                    {
+                        isActive:false,
+                        info:'上课',
+                        time:2
+                    },{
+                        isActive:false,
+                        info:'吃饭',
+                        time:1
+                    },{
+                        isActive:false,
+                        info:'午休',
+                        time:1
+                    },{
+                        isActive:false,
+                        info:'篮球',
+                        time:2
+                    },{
+                        isActive:false,
+                        info:'聚会',
+                        time:3
+                    },{
+                        isActive:false,
+                        info:'上课',
+                        time:2
+                    },
+                ],
+                sum:0,
+                checkedList:[],
+                addInfo:"",
+                addTime:"",
+                message:"sdfjslkflsdkjflksfjf"
+            },
+            methods: {
+                listClick(obj){
+                    obj.isActive = !obj.isActive;
+                    this.sumTime();
+                },
+                sumTime(){
+                    let tem = 0
+                    this.infoList.forEach((val,index) => {
+                        if(val.isActive){
+                            tem += val.time;
+                        }
+                    });
+                    this.sum = tem;
+                },
+                delList(index){
+                    this.infoList.splice(index,1);
+                },
+                delChecked(){
+                    this.infoList = this.infoList.filter((val,index)=>{
+                        if(!this.checkedList.includes(index)){
+                            return val;
+                        }
+                    })
+                    this.checkedList = [];
+                },
+                addList(){
+                    this.infoList.push({
+                        info:this.addInfo,
+                        time:this.addTime,
+                        isActive:false
+                    })
+                    this.addInfo = this.addTime = "";
+                }
+            },
+            computed: {
+                csum(){
+                    let tem = 0
+                    this.infoList.forEach((val,index) => {
+                        if(val.isActive){
+                            tem += val.time;
+                        }
+                    });
+                    return tem;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

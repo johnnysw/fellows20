@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .div1{
+            height: 200px;
+            width: 200px;
+            background:red;
+        }
+        .div2{
+            height: 100px;
+            width: 100px;
+            background:blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div @click="click1">@click</div>
+        <div v-on:click="testClick(2,$event)"> {{ num }}</div>        
+        <div class="div1" @click = "click2($event)">
+            <div class="div2" @click.stop = "click3($event)"> </div>
+        </div>
+        <a href="http://www.baidu.com" @click.prevent>baidu</a>
+        <input type="text" @keyup.enter.once="keyup1($event)">
+        <div v-on="{ mousedown: doThis, mouseup: doThat }">多事件</div>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el :"#app",
+            data:{
+                num:0
+            },
+            methods: {
+                testClick(key,e){
+                    this.num += key;
+                    console.log(e);
+                    
+                },
+                click1(){
+                    console.log(1);
+                    
+                },
+                click2(e){
+                    console.log('div1');
+                    
+                },
+                click3(e){
+                    console.log('div2');
+                    //e.stopPropagation();
+                },
+                click4(e){
+                    //e.preventDefault()
+                },
+                keyup1(e){
+                    //if(e.keyCode == "13"){
+                        console.log("enter");
+                    //}
+                },
+                doThat(){
+                    console.log("down");
+                    
+                },
+                doThis(){
+                    console.log("up");
+                    
+                }
+            }
+        });
+    </script>
+</body>
+</html>
