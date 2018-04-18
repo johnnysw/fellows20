@@ -28,6 +28,10 @@
         <input type="text" v-model = "addInfo">
         <input type="number" v-model = "addTime">
         <button @click = "addList">添加</button>
+        <div>
+                <input type="text" v-model = "searchVal">
+                <button @click = "searchList">搜索</button>
+        </div>
         <table>
             <tr>
                 <th>选择</th>
@@ -81,7 +85,8 @@
                 checkedList:[],
                 addInfo:"",
                 addTime:"",
-                message:"sdfjslkflsdkjflksfjf"
+                message:"sdfjslkflsdkjflksfjf",
+                searchVal:""
             },
             methods: {
                 listClick(obj){
@@ -115,6 +120,13 @@
                         isActive:false
                     })
                     this.addInfo = this.addTime = "";
+                },
+                searchList(){
+                    this.infoList = this.infoList.filter((val,index)=>{
+                        if(val.info.includes(this.searchVal)){
+                            return val;
+                        }
+                    })
                 }
             },
             computed: {

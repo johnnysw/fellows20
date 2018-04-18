@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        table td ,table th{
+            border: 1px solid #dddddd;
+        }
+        table .active{
+            background: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model="name">
+        <input type="number" v-model.number="price">
+        <button @click="addList">添加</button>
+        <input type="text" v-model="search">
+        <button @click="searchList">添加</button>
+        <table>
+            <tr>
+                <th>选择</th>
+                <th>商品名称</th>
+                <th>商品价格</th>
+                <th>删除</th>
+            </tr>
+            <tr @click="selecte(val)" v-for='(val,index) in listArr' :class="{'active':val.isSelected}">
+                <td><input type="checkbox" @click.stop :value="index" v-model="checks"></td>
+                <td>{{val.name}}</td>
+                <td>{{val.price}}</td>
+                <td><button @click.stop="delList(index)">X</button></td> 
+            </tr>
+            <tr>
+                <td><button @click="delAny">选中删除</button></td>
+                <td colspan="3">{{sum}}</td>
+            </tr>
+        </table>
+        {{checks}}
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el:"#app",
+            data:{
+                sum:0,
+                name:"",
+                price:0,
+                checks:[],
+                search:"",
+                testArr:[1,3,5,6,7,8,9,0],
+                listArr:[
+                    {
+                        isSelected:false,
+                        name:"衣服",
+                        price:22
+                    },
+                    {
+                        isSelected:false,
+                        name:"鞋子",
+                        price:34
+                    },
+                    {
+                        isSelected:false,
+                        name:"裤子",
+                        price:45
+                    },
+                    {
+                        isSelected:false,
+                        name:"帽子",
+                        price:66
+                    },
+                    {
+                        isSelected:false,
+                        name:"衬衫",
+                        price:43
+                    }
+                ]
+            },
+            methods: {
+                selecte(val){
+                    // if(val.isSelected){
+                    //     this.sum-=val.price;
+                    // }else{
+                    //     this.sum+=val.price;
+                    // }
+                    val.isSelected = !val.isSelected;
+                    this.sumFun()
+                },
+                sumFun(){
+                    let temp = 0;
+                    this.listArr.forEach((val,index) => {
+                        if(val.isSelected){
+                            temp+=val.price;
+                        }
+                    });
+                    this.sum = temp;
+                },
+                delList(index){
+                   this.listArr.splice(index,1);
+                    
+                },
+                delAny(){
+                    console.log(this.listArr);
+                    
+                   let newArr = this.listArr.filter((val,index)=>{
+                        if(!this.checks.includes(index)){
+                            return val;
+                        }
+                    })
+                    this.listArr=newArr;
+                    this.checks = [];
+                },
+                addList(){
+                    this.listArr.push({
+                        name:this.name,
+                        price:this.price,
+                        isSelected:false
+                    })
+                },
+                searchList(){
+                    this.search
+                    let newArr = this.listArr.filter((val,index)=>{
+                        if(val.name.includes(this.search)){
+                            return val;
+                        }
+                    })
+                    this.listArr = newArr;
+                }
+            }
+            
+        })
+    </script>
+</body>
+</html>

@@ -7,23 +7,79 @@
     <title>Document</title>
 </head>
     <div id="app">
+        <div msg="123111111">{{ msg }}</div>
         {{ message }}
         <ul>
             <li v-for="(sc,index) in school">{{ sc }}-{{ index }}</li>
         </ul>
         <ul>
-            <li v-for="i in arr2">{{i}}</li>
+            <li v-for="i in arr">{{i}}</li>
         </ul>
+        <button @click="changeDir1">click</button>
+        <button @click="destroy">click</button>
+        <testa msg="123sss"></testa>
+        <div v-testb='ttt'>123</div>
+        <comp msss="你好！" :dddd='ttt' @abcd="abcd">
+            <div slot="username"></div>
+        </comp>
+        
     </div>
+    <template id="temTest">
+        <div>
+            <div>姓名 <slot name="username"></slot> {{ dddd }}</div>
+            <div @click="$emit('abcd')">年龄{{msss}}</div>
+        </div>
+    </template>
 <body>
         <script src="./vue.js"></script>
     <script>
+        Vue.directive('testb',function(el,binding,vnode){
+
+            el.style.backgroundColor = binding.value;
+        });
+        // Vue.directive('testb',{
+        //     bind(el,binding,vnode){
+        //         console.log('bind');
+                
+        //     },
+        //     inserted(el,binding,vnode){
+        //         console.log('inserted');
+        //         el.style.backgroundColor = binding.value;
+        //     },
+        //     update(el,binding,vnode){
+        //         console.log('update');
+        //         el.style.backgroundColor = binding.value;
+        //     },
+        //     componentUpdated(){
+        //         console.log('componentUpdated');
+        //     },
+        //     unbind(){
+        //         console.log('unbind');
+        //     }
+        // });
+        Vue.component('testa',{
+            template:`
+                <div>
+                <div>1{{msg}}</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                </div>
+            `,
+            props:['msg']
+        })
             var vm = new Vue({
                 el: '#app',
+
                 data: {
                     message: 'Hello Vue!',
                     school:['heida','linda','ligong'],
-                    arr:[2,4,6,3,9,7]
+                    arr:[2,4,6,3,9,7],
+                    msg:"11",
+                    ttt:'red',
+                    obj:{
+                        name:"11",
+                    }
                 },
                 computed: {
                     arr2(){
@@ -31,6 +87,53 @@
                             return b - a;
                         })
                     }
+                },
+                methods:{
+                    changeDir(){
+                        this.ttt="blue";
+                    },
+                    changeDir1(){
+                        this.arr[1]=1111;
+                        this.obj.age = "3";
+                        Vue.set(this.arr,1,'1111');
+                        Vue.set(this.obj,'age',2)
+                    },
+                    destroy(){
+                        this.$destroy();
+                    },
+                    abcd(){
+                        console.log("123");
+                    }
+                },
+                components:{
+                    comp:{
+                        template:"#temTest",
+                        props:['msss','dddd']
+                    }
+                },
+                beforeCreate(){
+                    console.log('beforeCreate');
+                },
+                created(){
+                    console.log('created');
+                },
+                beforeMount(){
+                    console.log('beforeMount');
+                },
+                mounted(){
+                    console.log('mounted');
+                },
+                beforeUpdate(){
+                    console.log('beforeUpdate');
+                },
+                updated(){
+                    console.log('updated');
+                },
+                beforeDestroy(){
+                    console.log('beforeDestroy');
+                },
+                destroyed(){
+                    console.log('destroyed');
                 }
             })
        
